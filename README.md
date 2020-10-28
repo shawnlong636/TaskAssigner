@@ -17,13 +17,23 @@
  > * Each member of the group **must** be committing code regularly and make sure their code is correctly attributed to them. We will be checking attributions to determine if there was equal contribution to the project.
 
 ## Project Description
+Task Assign
  > Your project description should summarize the project you are proposing. Be sure to include
+For are project we've decided to go with a designing a task assigner application that lets the user create a task, assign it to a person, and give a time and date to compelete the task by. Their will be an easy to use graphical interface. 
  > * Why is it important or interesting to you?
+This project is interesting to us, because it can reflect a planner for chores at home, a task board for people in a group can use, or even a simple todo list. Planners with time blocks tend to be the best for productivatie so it would be interesting to build one. 
  > * What languages/tools/technologies do you plan to use? (This list may change over the course of the project)
- >   * [toolname](link) - Short description
+ >   * - C++ 
+       - Qt, https://www.qt.io/ 
  > * What will be the input/output of your project?
- > * What are the three design patterns you will be using. For each design pattern you must:
+	- The input will be whatever the user inputs to the textboxs 
+	- The output will be the task, the person its assigned to, and the time
+ > * What are the three design patterns you will be using. For each design pattern you must	 
  >   * Explain in 3 - 5 sentences why you picked this pattern and what feature you will implement with it
+	Factory Method- The user will be able to create and add new people. Since every Person created can have multiple tasks due to at different or same times its important to create those instances in our interface. Due to the need to create objects form concrete classes, but return them as objects of interface type, the factory method is ideal
+	Command Method- This is design pattern is would is widly used in callbacks to parameterizing UI elements with actions. When the user adds a new person elements must be generated in the UI, therefore the command is an important pattern to include in our project. Furthermore its often used in queuing tasks which is an intergal asbect of the way tasks will be created in for each person object. 
+
+	Facade Method- Since our application is going to be using the Qt framework for the GUI the facade design pattern was one of which we thought of implementing. Since a person object will be dynamically created when the user clicks a button on our interface, the facade method will help implement this with the help of our framework. Also iit'll simplify things on the user end because more of the complex logic can be handled on another objects end. 
  > * This description should be in enough detail that the TA/instructor can determine the complexity of the project and if it is sufficient for the team members to complete in the time allotted. 
 
  > ## Phase II
