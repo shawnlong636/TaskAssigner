@@ -1,10 +1,10 @@
  > As you complete each section you **must** remove the prompt text. Every *turnin* of this project includes points for formatting of this README so keep it clean and keep it up to date. 
  > Prompt text is any lines beginning with "\<"
  > Replace anything between \<...\> with your project specifics and remove angle brackets. For example, you need to name your project and replace the header right below this line with that title (no angle brackets). 
-# \<Project title\>
+# Task Assigner
  > Your author list below should include links to all members GitHub and should begin with a "\<" (remove existing author).
  
- > Authors: \<[Jeffrey McDaniel](https://github.com/jmcda001)\>
+ > Authors: [Arzhang Valadkhani](https://github.com/arzhangv), [Shawn Long](https://github.com/shawnlong636), [Yuval Bar](https://github.com/yuval4597)
  
  > You will be forming a group of **THREE** students and work on an interesting project that you will propose yourself (in this `README.md` document). You can pick any project that you'd like, but it needs ot implement three design patterns. Each of the members in a group is expected to work on at least one design pattern and its test cases. You can, of course, help each other, but it needs to be clear who will be responsible for which pattern and for which general project features.
  
@@ -17,23 +17,20 @@
  > * Each member of the group **must** be committing code regularly and make sure their code is correctly attributed to them. We will be checking attributions to determine if there was equal contribution to the project.
 
 ## Project Description
-Task Assign
- > Your project description should summarize the project you are proposing. Be sure to include
-For are project we've decided to go with a designing a task assigner application that lets the user create a task, assign it to a person, and give a time and date to compelete the task by. Their will be an easy to use graphical interface. 
+ > Your project description should summarize the project you are proposing.
+> * For our project we've decided to go with a designing a task assigner application that lets the user create a task, assign it to a person, and give a time and date to compelete the task by. Their will be an easy to use graphical interface.\
  > * Why is it important or interesting to you?
-This project is interesting to us, because it can reflect a planner for chores at home, a task board for people in a group can use, or even a simple todo list. Planners with time blocks tend to be the best for productivatie so it would be interesting to build one. 
+ >   - This project is interesting to us, because it can reflect a planner for chores at home, a task board for people in a group can use, or even a simple todo list. Planners with time blocks tend to be the best for productivatie so it would be interesting to build one. 
  > * What languages/tools/technologies do you plan to use? (This list may change over the course of the project)
- >   * - C++ 
-       - Qt, https://www.qt.io/ 
+ >   - C++ 
+ >   - Qt, https://www.qt.io/ 
  > * What will be the input/output of your project?
-	- The input will be whatever the user inputs to the textboxs 
-	- The output will be the task, the person its assigned to, and the time
- > * What are the three design patterns you will be using. For each design pattern you must	 
-
-	- Factory Method- The user will be able to create and add new people. Since every Person created can have multiple tasks due to at different or same times its important to create those instances in our interface. Due to the need to create objects form concrete classes, but return them as objects of interface type, the factory method is ideal
-	- Command Method- This is design pattern is would is widly used in callbacks to parameterizing UI elements with actions. When the user adds a new person elements must be generated in the UI, therefore the command is an important pattern to include in our project. Furthermore its often used in queuing tasks which is an intergal asbect of the way tasks will be created in for each person object. 
-
-	- Facade Method- Since our application is going to be using the Qt framework for the GUI the facade design pattern was one of which we thought of implementing. A person object will be dynamically created when the user clicks a button on our interface, the facade method will help implement this with the help of our framework. The facademethod will also help simplify things on the user end because more of the complex logic can be handled on another objects end. 
+ >   - The input will be whatever the user inputs to the textboxes.
+ >   - The output will be the task, the person it's assigned to, and the time in which it is due.
+ > * What are the three design patterns you will be using. For each design pattern you must explain in 3 - 5 sentences why you picked this pattern and what feature you will implement with it:
+ >   - *Factory Method* - The user will be able to create and add new people. Since every Person created can have multiple tasks due to at different or same times its important to create those instances in our interface. Due to the need to create objects form concrete classes, but return them as objects of interface type, the factory method is ideal
+ >   - *Command Method* - This is design pattern is would is widly used in callbacks to parameterizing UI elements with actions. When the user adds a new person elements must be generated in the UI, therefore the command is an important pattern to include in our project. Furthermore its often used in queuing tasks which is an intergal asbect of the way tasks will be created in for each person object. 
+ >   - *Facade Method* - Since our application is going to be using the Qt framework for the GUI the facade design pattern was one of which we thought of implementing. A person object will be dynamically created when the user clicks a button on our interface, the facade method will help implement this with the help of our framework. The facademethod will also help simplify things on the user end because more of the complex logic can be handled on another objects end. 
  > * This description should be in enough detail that the TA/instructor can determine the complexity of the project and if it is sufficient for the team members to complete in the time allotted. 
 
  > ## Phase II
