@@ -71,3 +71,15 @@ Thumbs.db
 *.dll
 *.exe
 
+# CMake Files
+# --------
+CMakeFiles/
+CMakeCache.txt
+CMakeLists.txt.user
+TaskAssigner_autogen/
+cmake_install.cmake
+
+# Executbables
+# --------
+TaskAssigner
+unit_tests
