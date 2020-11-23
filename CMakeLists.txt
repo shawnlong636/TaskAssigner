@@ -35,6 +35,8 @@ if(ANDROID)
     src/mainwindow.cpp
     header/mainwindow.h
     ui/mainwindow.ui
+    src/task.cpp
+    header/task.h
   )
 else()
   add_executable(TaskAssigner
@@ -42,6 +44,8 @@ else()
     src/mainwindow.cpp
     header/mainwindow.h
     ui/mainwindow.ui
+    src/task.cpp
+    header/task.h
   )
 
   add_executable(unit_tests
