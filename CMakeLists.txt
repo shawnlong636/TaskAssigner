@@ -1,53 +1,54 @@
-cmake_minimum_required(VERSION 3.5)
+# Reference: http://qt-project.org/doc/qt-5.0/qtdoc/cmake-manual.html
 
-project(final-project-avala022-ybar001-slong024 LANGUAGES CXX)
+cmake_minimum_required(VERSION 3.0)
 
+# Add folder where are supportive functions
+set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
+
+# Include Qt basic functions
+include(QtCommon)
+
+# Basic information about project
+
+project(final-project-avala022-ybar001-slong024 VERSION 1.0 LANGUAGES CXX)
+
+# Set PROJECT_VERSION_PATCH and PROJECT_VERSION_TWEAK to 0 if not present, needed by add_project_meta
+fix_project_version()
 
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 
-set(CMAKE_CXX_STANDARD 11)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
+# Set additional project information
+# set(COMPANY "Example")
+# set(COPYRIGHT "Copyright (c) 2014 Vincent Lee. All rights reserved.")
+# set(IDENTIFIER "com.example.Example")
 
-# QtCreator supports the following variables for Android, which are identical to qmake Android variables.
-# Check http://doc.qt.io/qt-5/deployment-android.html for more information.
-# They need to be set before the find_package(Qt5 ...) call.
+set(SOURCE_FILES
+    src/main.cpp
+    src/mainwindow.cpp
+    header/mainwindow.h
+    ui/mainwindow.ui
+)
 
-#if(ANDROID)
-#    set(ANDROID_PACKAGE_SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/android")
-#    if (ANDROID_ABI STREQUAL "armeabi-v7a")
-#        set(ANDROID_EXTRA_LIBS
-#            ${CMAKE_CURRENT_SOURCE_DIR}/path/to/libcrypto.so
-#            ${CMAKE_CURRENT_SOURCE_DIR}/path/to/libssl.so)
-#    endif()
-#endif()
+# add_project_meta(META_FILES_TO_INCLUDE)
 
-find_package(QT NAMES Qt6 Qt5 COMPONENTS Widgets REQUIRED)
-find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Widgets REQUIRED)
+# set(RESOURCE_FILES example.qrc)
+
+find_package(Qt5 COMPONENTS Widgets REQUIRED)
+
+# source_group("UI Files" FILES ${UI_FILES})
 
 ADD_SUBDIRECTORY(googletest)
 
-if(ANDROID)
-  add_library(final-project-avala022-ybar001-slong024 SHARED
-    src/main.cpp
-    src/mainwindow.cpp
-    header/mainwindow.h
-    ui/mainwindow.ui
-  )
-else()
-  add_executable(TaskAssigner
-    src/main.cpp
-    src/mainwindow.cpp
-    header/mainwindow.h
-    ui/mainwindow.ui
-  )
+add_executable(TaskAssigner ${OS_BUNDLE} # Expands to WIN32 or MACOS_BUNDLE depending on OS
+    ${SOURCE_FILES} ${META_FILES_TO_INCLUDE} ${RESOURCE_FILES}
+)
 
-  add_executable(unit_tests
-      test/test.cpp
-  )
-endif()
+add_executable(unit_tests
+    test/test.cpp
+)
 
-target_link_libraries(TaskAssigner PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
+target_link_libraries(TaskAssigner Qt5::Widgets)
 target_link_libraries(unit_tests ${QT5_LIBRARIES} gtest_main)
