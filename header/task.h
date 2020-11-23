@@ -3,7 +3,7 @@
 
 #include <QString>
 #include <QDate>
-#include <vector>
+#include <QVector>
 
 class Task
 {
@@ -12,12 +12,12 @@ private:
     QString description;
     QDate* dueDate;
     // TODO: CompletionState goes here (not implemented yet)
-    vector<Task*> taskList;
+    QVector<Task*> taskList;
 
 public:
     bool checkCompletion();
     void toDo();
-    void changeState(/* TODO: CompletionState as parameter when implemented */)
+    void changeState(/* TODO: CompletionState as parameter when implemented */);
 };
 
 #endif // TASK_H
