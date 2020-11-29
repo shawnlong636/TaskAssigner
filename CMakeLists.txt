@@ -35,6 +35,9 @@ set(SOURCE_FILES
     header/InProgress
     ui/mainwindow.ui
     src/task.cpp
+    src/complete.cpp
+    src/incomplete.cpp
+    src/inProgress.cpp
     header/task.h
 )
 
