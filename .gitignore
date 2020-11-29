@@ -86,3 +86,7 @@ bin/
 # --------
 TaskAssigner
 unit_tests
+
+# VSCode Files
+# --------
+.vscode/

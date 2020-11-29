@@ -1,5 +1,5 @@
-#ifndef __COMPLETIONSTATE_HPP__
-#define __COMPLETIONSTATE_HPP__
+#ifndef __COMPLETIONSTATE_H__
+#define __COMPLETIONSTATE_H__
 
 class CompletionState {
     public:
@@ -7,4 +7,4 @@ class CompletionState {
         virtual void printToDo() = 0;
 }
 
-#endif // __COMPLETIONSTATE_HPP__
+#endif // __COMPLETIONSTATE_H__
