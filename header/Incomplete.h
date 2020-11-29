@@ -6,6 +6,6 @@
 class Incomplete : CompletionState {
     virtual bool CheckCompletion() override;
     virtual printToDo() override;
-}
+};
 
 #endif // __INCOMPLETE_H__
