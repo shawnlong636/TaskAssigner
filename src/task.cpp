@@ -10,3 +10,7 @@ void Task::toDo()
 {
     // TODO: PrintToDo based on completionState
 }
+
+void Task::changeState(CompletionState* state) {
+    this->state = state;
+}

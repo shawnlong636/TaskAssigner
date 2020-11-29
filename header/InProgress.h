@@ -6,6 +6,6 @@
 class InProgress : CompletionState {
     virtual bool CheckCompletion() override;
     virtual printToDo() override;
-}
+};
 
 #endif // __INPROGRESS_H__
