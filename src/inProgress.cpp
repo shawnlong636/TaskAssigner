@@ -1,9 +1,9 @@
 #include "../header/inProgress.h"
 
-bool inProgress::checkCompletion() {
+bool InProgress::checkCompletion() {
     return true;
 }
 
-void inProgress::printToDo() { 
+void InProgress::printToDo() { 
     // TODO: Implement print function
 }

@@ -1,11 +1,11 @@
 #ifndef __INCOMPLETE_H__
 #define __INCOMPLETE_H__
 
-#include "CompletionState.h"
+#include "completionState.h"
 
 class Incomplete : CompletionState {
-    virtual bool CheckCompletion() override;
-    virtual printToDo() override;
+    virtual bool checkCompletion() override;
+    virtual void printToDo() override;
 };
 
 #endif // __INCOMPLETE_H__
