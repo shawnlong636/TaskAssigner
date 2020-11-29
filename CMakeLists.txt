@@ -30,6 +30,8 @@ set(SOURCE_FILES
     src/mainwindow.cpp
     header/mainwindow.h
     ui/mainwindow.ui
+    src/task.cpp
+    header/task.h
 )
 
 # add_project_meta(META_FILES_TO_INCLUDE)
