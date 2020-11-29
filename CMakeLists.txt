@@ -30,6 +30,9 @@ set(SOURCE_FILES
     src/mainwindow.cpp
     header/mainwindow.h
     header/CompletionState.h
+    header/Complete.h
+    header/Incomplete.h
+    header/InProgress
     ui/mainwindow.ui
     src/task.cpp
     header/task.h
