@@ -29,6 +29,7 @@ set(SOURCE_FILES
     src/main.cpp
     src/mainwindow.cpp
     header/mainwindow.h
+    header/CompletionState.h
     ui/mainwindow.ui
     src/task.cpp
     header/task.h
