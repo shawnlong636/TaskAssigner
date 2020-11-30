@@ -9,6 +9,8 @@ class CompletionState {
     protected:
         Task* task;
     public:
+        CompletionState() { }
+        virtual ~CompletionState() { }
         virtual bool checkCompletion() = 0;
         virtual void printToDo() = 0;
 };

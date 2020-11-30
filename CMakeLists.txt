@@ -29,10 +29,10 @@ set(SOURCE_FILES
     src/main.cpp
     src/mainwindow.cpp
     header/mainwindow.h
-    header/CompletionState.h
-    header/Complete.h
-    header/Incomplete.h
-    header/InProgress
+    header/completionState.h
+    header/complete.h
+    header/incomplete.h
+    header/inProgress
     ui/mainwindow.ui
     src/task.cpp
     src/complete.cpp

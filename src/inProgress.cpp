@@ -1,5 +1,8 @@
 #include "../header/inProgress.h"
 
+InProgress::InProgress() { }
+InProgress::~InProgress() { }
+
 bool InProgress::checkCompletion() {
     return true;
 }

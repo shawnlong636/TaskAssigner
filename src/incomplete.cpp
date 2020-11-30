@@ -1,5 +1,8 @@
 #include "../header/incomplete.h"
 
+Incomplete::Incomplete() { }
+Incomplete::~Incomplete() { }
+
 bool Incomplete::checkCompletion() {
     return false;
 }

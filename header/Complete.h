@@ -6,6 +6,7 @@
 class Complete : public CompletionState {
     public:
         Complete();
+        ~Complete();
         virtual bool checkCompletion() override;
         virtual void printToDo() override;
 };
