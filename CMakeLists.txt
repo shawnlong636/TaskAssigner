@@ -29,17 +29,10 @@ set(SOURCE_FILES
     src/main.cpp
     src/mainwindow.cpp
     header/mainwindow.h
-<<<<<<< HEAD
     header/completionState.h
     header/complete.h
     header/incomplete.h
     header/inProgress
-=======
-    header/CompletionState.h
-    header/Complete.h
-    header/Incomplete.h
-    header/InProgress
->>>>>>> 97ea701430929db999d7359fc35e47172c4f2b84
     ui/mainwindow.ui
     src/task.cpp
     src/complete.cpp
@@ -64,10 +57,7 @@ add_executable(TaskAssigner ${OS_BUNDLE} # Expands to WIN32 or MACOS_BUNDLE depe
 
 add_executable(unit_tests
     src/complete.cpp
-<<<<<<< HEAD
     src/task.cpp
-=======
->>>>>>> 97ea701430929db999d7359fc35e47172c4f2b84
     test/test.cpp
 )
 
