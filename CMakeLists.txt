@@ -53,4 +53,4 @@ add_executable(unit_tests
 )
 
 target_link_libraries(TaskAssigner Qt5::Widgets)
-target_link_libraries(unit_tests ${QT5_LIBRARIES} gtest_main)
+target_link_libraries(unit_tests ${QT5_LIBRARIES} Qt5::Widgets gtest_main)
