@@ -3,9 +3,11 @@
 
 #include "completionState.h"
 
-class Complete : CompletionState {
-    virtual bool checkCompletion() override;
-    virtual void printToDo() override;
+class Complete : public CompletionState {
+    public:
+        Complete();
+        virtual bool checkCompletion() override;
+        virtual void printToDo() override;
 };
 
 #endif // __COMPLETE_H__
