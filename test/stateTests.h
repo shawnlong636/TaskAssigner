@@ -4,7 +4,15 @@
 #include "../header/task.h"
 #include "../header/complete.h"
 
-TEST(CompleteTests,test1) {
-    CompletionState* state = new Complete();
+TEST(CompleteTests, checkCompletion) {
+    Task* task = new Task();
+    CompletionState* state = new Complete(task);
+
     EXPECT_TRUE(state->checkCompletion());
+    delete state;
+}
+
+TEST(CompleteTests, printToDo) {
+    Task* task = new Task();
+    EXPECT_TRUE(true);
 }

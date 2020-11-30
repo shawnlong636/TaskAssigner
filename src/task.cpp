@@ -12,5 +12,7 @@ void Task::toDo()
 }
 
 void Task::changeState(CompletionState* state) {
+    if (this->state != nullptr)
+        delete state;
     this->state = state;
 }

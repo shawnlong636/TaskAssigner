@@ -5,10 +5,10 @@
 
 class InProgress : public CompletionState {
     public:
-        InProgress();
+        InProgress(Task* task);
         ~InProgress();
         virtual bool checkCompletion() override;
-        virtual void printToDo() override;
+        virtual std::string printToDo() override;
 };
 
 #endif // __INPROGRESS_H__

@@ -5,10 +5,10 @@
 
 class Incomplete : public CompletionState {
     public:
-        Incomplete();
+        Incomplete(Task* task);
         ~Incomplete();
         virtual bool checkCompletion() override;
-        virtual void printToDo() override;
+        virtual std::string printToDo() override;
 };
 
 #endif // __INCOMPLETE_H__

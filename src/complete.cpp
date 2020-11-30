@@ -1,12 +1,13 @@
 #include "../header/complete.h"
 
-Complete::Complete() { }
+Complete::Complete(Task* task) : CompletionState(task) { }
 Complete::~Complete() { }
 
 bool Complete::checkCompletion() {
     return true;
 }
 
-void Complete::printToDo() { 
+std::string Complete::printToDo() { 
     // TODO: Implement print function
+    return "";
 }

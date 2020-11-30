@@ -1,12 +1,13 @@
 #include "../header/inProgress.h"
 
-InProgress::InProgress() { }
+InProgress::InProgress(Task* task) : CompletionState(task) { }
 InProgress::~InProgress() { }
 
 bool InProgress::checkCompletion() {
     return true;
 }
 
-void InProgress::printToDo() { 
+std::string InProgress::printToDo() { 
     // TODO: Implement print function
+    return "";
 }
