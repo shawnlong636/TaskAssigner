@@ -9,5 +9,6 @@ bool Complete::checkCompletion() {
 
 std::string Complete::printToDo() { 
     // TODO: Implement print function
+    
     return "";
 }

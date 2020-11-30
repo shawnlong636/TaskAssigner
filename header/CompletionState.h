@@ -2,6 +2,8 @@
 #define __COMPLETIONSTATE_H__
 
 #include "task.h"
+#include <string>
+
 
 class Task;
 

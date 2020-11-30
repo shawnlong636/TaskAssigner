@@ -5,6 +5,7 @@
 #include <QDate>
 #include <QVector>
 #include "completionState.h" // Needed for ChangeState
+#include <string>
 
 class CompletionState; // Added to avoid circular dependency
 
@@ -21,6 +22,9 @@ public:
     bool checkCompletion();
     void toDo();
     void changeState(CompletionState* state);
+    void setName(std::string name); // Mock Function needed to test State functionality
+    void setDescription(std::string desc); // Mock Function needed to test State functionality
+    void setDate(std::string date); // Mock Function needed to test State functionality
 };
 
 #endif // TASK_H

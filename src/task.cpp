@@ -16,3 +16,15 @@ void Task::changeState(CompletionState* state) {
         delete state;
     this->state = state;
 }
+/* MOCK FUNCTIONS NEEDED FOR TESTING STATE METHODS */
+void Task::setName(std::string name) {
+    // this->taskName = QString::fromStdString(name);
+}
+void Task::setDescription(std::string desc) {
+    this->description = QString::fromStdString(desc);
+}
+void Task::setDate(std::string date) {
+    if (this->dueDate != nullptr)
+        delete dueDate;
+    this->dueDate = new QDate(QDate::fromString(QString::fromStdString(date), "mm-dd-yyyy"));
+}
