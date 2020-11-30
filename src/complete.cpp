@@ -1,5 +1,7 @@
 #include "../header/complete.h"
 
+Complete::Complete() { }
+
 bool Complete::checkCompletion() {
     return true;
 }
