@@ -8,6 +8,11 @@ bool Incomplete::checkCompletion() {
 }
 
 std::string Incomplete::printToDo() { 
-    // TODO: Implement print function
-    return "";
+    std::string str = task->getName() + "\t";
+    str += (task->getDescription() + "\t");
+    str += (task->getDate() + "\t");
+    str += "Incomplete\t";
+    str += "\n";
+
+    return str;
 }
