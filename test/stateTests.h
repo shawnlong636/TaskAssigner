@@ -112,3 +112,33 @@ TEST(InProgressTests, printToDo) { // FIXME: Create Test once decided on impl. o
     delete task;
     delete state;
 }
+
+TEST(DynamicTests, IntegratedTest) {
+    Task* task = new Task();
+    task->changeState(new Incomplete(task));
+
+    EXPECT_FALSE(task->checkCompletion());
+
+    task->setName("Perform a integrated test");
+
+    EXPECT_EQ(task->toDo(), "Perform a integrated test\t\t\tIncomplete\t\n");
+    
+    task->setName("Perform an integrated test");
+    EXPECT_EQ(task->toDo(), "Perform an integrated test\t\t\tIncomplete\t\n");
+
+    task->changeState(new InProgress(task));
+    
+    EXPECT_EQ(task->toDo(), "Perform an integrated test\t\t\tInProgress\t\n");
+
+    task->setDescription("Try really hard to write tests that'll break the code");
+    EXPECT_EQ(task->toDo(), "Perform an integrated test\tTry really hard to write tests that'll break the code\t\tInProgress\t\n");
+
+    task->setDescription("Not too bad! Keep working at it.");
+    EXPECT_EQ(task->toDo(), "Perform an integrated test\tNot too bad! Keep working at it.\t\tInProgress\t\n");
+
+    task->setDate(2020,12,1);
+    EXPECT_EQ(task->toDo(), "Perform an integrated test\tNot too bad! Keep working at it.\t12-01-2020\tInProgress\t\n");
+
+    task->changeState(new Complete(task));
+    EXPECT_EQ(task->toDo(), "Perform an integrated test\tNot too bad! Keep working at it.\t12-01-2020\tComplete\t\n");
+}
