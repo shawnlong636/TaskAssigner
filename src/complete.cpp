@@ -8,11 +8,16 @@ bool Complete::checkCompletion() {
 }
 
 std::string Complete::printToDo() { 
-    std::string str = task->getName() + "\t";
-    str += (task->getDescription() + "\t");
-    str += (task->getDate() + "\t");
-    str += "Complete\t";
-    str += "\n";
+    std::string str = "";
+    if (task->getName()!="")
+        str = task->getName();
+    str += "\t";
+    if (task->getDescription()!="")
+        str += task->getDescription();
+    str += "\t";
+    if (task->getDate()!="")
+        str += task->getDate();
+    str += "\tComplete\t\n";
 
     return str;
 }

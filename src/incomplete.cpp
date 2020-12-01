@@ -8,11 +8,16 @@ bool Incomplete::checkCompletion() {
 }
 
 std::string Incomplete::printToDo() { 
-    std::string str = task->getName() + "\t";
-    str += (task->getDescription() + "\t");
-    str += (task->getDate() + "\t");
-    str += "Incomplete\t";
-    str += "\n";
+    std::string str = "";
+    if (task->getName()!="")
+        str = task->getName();
+    str += "\t";
+    if (task->getDescription()!="")
+        str += task->getDescription();
+    str += "\t";
+    if (task->getDate()!="")
+        str += task->getDate();
+    str += "\tIncomplete\t\n";
 
     return str;
 }

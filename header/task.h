@@ -6,6 +6,7 @@
 #include <QVector>
 #include "completionState.h" // Needed for ChangeState
 #include <string>
+#include <iostream>
 
 class CompletionState; // Added to avoid circular dependency
 
@@ -24,7 +25,7 @@ public:
     void changeState(CompletionState* state);
     void setName(std::string name); // Mock Function needed to test State functionality
     void setDescription(std::string desc); // Mock Function needed to test State functionality
-    void setDate(std::string date); // Mock Function needed to test State functionality
+    void setDate(int y, int m, int d); // Mock Function needed to test State functionality
     std::string getName();
     std::string getDescription();
     std::string getDate();

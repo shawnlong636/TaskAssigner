@@ -57,6 +57,8 @@ add_executable(TaskAssigner ${OS_BUNDLE} # Expands to WIN32 or MACOS_BUNDLE depe
 
 add_executable(unit_tests
     src/complete.cpp
+    src/incomplete.cpp
+    src/inProgress.cpp
     src/task.cpp
     test/test.cpp
 )
