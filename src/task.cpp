@@ -2,18 +2,17 @@
 
 bool Task::checkCompletion()
 {
-    // TODO: Return value based on completionState
-    return true;    // Place holder
+    return state->checkCompletion();
 }
 
-void Task::toDo()
+std::string Task::toDo()
 {
-    // TODO: PrintToDo based on completionState
+    return state->printToDo();
 }
 
 void Task::changeState(CompletionState* state) {
     if (this->state != nullptr)
-        delete state;
+        delete this->state;
     this->state = state;
 }
 /* MOCK FUNCTIONS NEEDED FOR TESTING STATE METHODS */

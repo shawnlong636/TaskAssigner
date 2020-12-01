@@ -21,7 +21,7 @@ private:
 
 public:
     bool checkCompletion();
-    void toDo();
+    std::string toDo();
     void changeState(CompletionState* state);
     void setName(std::string name); // Mock Function needed to test State functionality
     void setDescription(std::string desc); // Mock Function needed to test State functionality
