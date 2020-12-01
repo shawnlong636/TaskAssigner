@@ -28,3 +28,14 @@ void Task::setDate(std::string date) {
         delete dueDate;
     this->dueDate = new QDate(QDate::fromString(QString::fromStdString(date), "mm-dd-yyyy"));
 }
+
+std::string Task::getName() {
+    return taskName.toStdString();
+}
+std::string Task::getDescription() {
+    return description.toStdString();
+}
+std::string Task::getDate() {
+    QString str = this->dueDate->toString("mm-dd-yyyy");
+    return str.toStdString();
+}

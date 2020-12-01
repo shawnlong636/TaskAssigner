@@ -25,6 +25,9 @@ public:
     void setName(std::string name); // Mock Function needed to test State functionality
     void setDescription(std::string desc); // Mock Function needed to test State functionality
     void setDate(std::string date); // Mock Function needed to test State functionality
+    std::string getName();
+    std::string getDescription();
+    std::string getDate();
 };
 
 #endif // TASK_H
