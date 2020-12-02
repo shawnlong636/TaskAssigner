@@ -29,8 +29,15 @@ set(SOURCE_FILES
     src/main.cpp
     src/mainwindow.cpp
     header/mainwindow.h
+    header/completionState.h
+    header/complete.h
+    header/incomplete.h
+    header/inProgress
     ui/mainwindow.ui
     src/task.cpp
+    src/complete.cpp
+    src/incomplete.cpp
+    src/inProgress.cpp
     header/task.h
 )
 
@@ -49,6 +56,10 @@ add_executable(TaskAssigner ${OS_BUNDLE} # Expands to WIN32 or MACOS_BUNDLE depe
 )
 
 add_executable(unit_tests
+    src/complete.cpp
+    src/incomplete.cpp
+    src/inProgress.cpp
+    src/task.cpp
     test/test.cpp
 )
 

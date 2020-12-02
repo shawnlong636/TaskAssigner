@@ -4,6 +4,11 @@
 #include <QString>
 #include <QDate>
 #include <QVector>
+#include "completionState.h" // Needed for ChangeState
+#include <string>
+#include <iostream>
+
+class CompletionState; // Added to avoid circular dependency
 
 class Task
 {
@@ -11,13 +16,19 @@ private:
     QString taskName;
     QString description;
     QDate* dueDate;
-    // TODO: CompletionState goes here (not implemented yet)
+    CompletionState* state;// Added newly implemented CompletionState
     QVector<Task*> taskList;
 
 public:
     bool checkCompletion();
-    void toDo();
-    void changeState(/* TODO: CompletionState as parameter when implemented */);
+    std::string toDo();
+    void changeState(CompletionState* state);
+    void setName(std::string name); // Mock Function needed to test State functionality
+    void setDescription(std::string desc); // Mock Function needed to test State functionality
+    void setDate(int y, int m, int d); // Mock Function needed to test State functionality
+    std::string getName();
+    std::string getDescription();
+    std::string getDate();
 };
 
 #endif // TASK_H
