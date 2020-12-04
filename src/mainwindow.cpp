@@ -6,6 +6,8 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
+    // Disable editing of table
     ui->tableWidget->setEditTriggers(QAbstractItemView::NoEditTriggers);
 }
 
