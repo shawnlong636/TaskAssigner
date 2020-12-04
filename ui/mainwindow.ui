@@ -18,21 +18,21 @@
     <item>
      <layout class="QHBoxLayout" name="horizontalLayout_3">
       <item>
-       <widget class="QPushButton" name="AddButton">
+       <widget class="QPushButton" name="addButton">
         <property name="text">
          <string>Add Task</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="EditButton">
+       <widget class="QPushButton" name="editButton">
         <property name="text">
          <string>Edit Task</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="RemoveButton">
+       <widget class="QPushButton" name="removeButton">
         <property name="text">
          <string>Remove Task</string>
         </property>
