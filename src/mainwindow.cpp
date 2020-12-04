@@ -43,5 +43,6 @@ void MainWindow::on_addButton_clicked()
 
 void MainWindow::on_tableWidget_cellActivated(int row, int column)
 {
-
+    activeRow = row;
+    activeColumn = column;
 }
