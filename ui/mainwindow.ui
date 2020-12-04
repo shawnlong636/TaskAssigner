@@ -31,6 +31,13 @@
         </property>
        </widget>
       </item>
+      <item>
+       <widget class="QPushButton" name="RemoveButton">
+        <property name="text">
+         <string>Remove Task</string>
+        </property>
+       </widget>
+      </item>
      </layout>
     </item>
     <item>
