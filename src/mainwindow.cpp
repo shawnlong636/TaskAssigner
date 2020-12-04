@@ -9,6 +9,9 @@ MainWindow::MainWindow(QWidget *parent)
 
     // Disable editing of table
     ui->tableWidget->setEditTriggers(QAbstractItemView::NoEditTriggers);
+
+    activeRow = 0;
+    activeColumn = 0;
 }
 
 MainWindow::~MainWindow()
@@ -36,4 +39,9 @@ void MainWindow::on_addButton_clicked()
 
     // Setting due date
     table->setItem(table->rowCount() - 1, 2, new QTableWidgetItem("Due date"));
+}
+
+void MainWindow::on_tableWidget_cellActivated(int row, int column)
+{
+
 }

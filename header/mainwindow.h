@@ -18,7 +18,12 @@ public:
 private slots:
     void on_addButton_clicked();
 
+    void on_tableWidget_cellActivated(int row, int column);
+
 private:
     Ui::MainWindow *ui;
+
+    int activeRow;
+    int activeColumn;
 };
 #endif // MAINWINDOW_H
