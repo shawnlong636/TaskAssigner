@@ -41,8 +41,22 @@ void MainWindow::on_addButton_clicked()
     table->setItem(table->rowCount() - 1, 2, new QTableWidgetItem("Due date"));
 }
 
-void MainWindow::on_tableWidget_cellActivated(int row, int column)
+void MainWindow::on_tableWidget_cellClicked(int row, int column)
 {
     activeRow = row;
     activeColumn = column;
+}
+
+// TODO: Create window prompting user to input name, description and due date
+void MainWindow::on_editButton_clicked()
+{
+    QTableWidget* table = ui->tableWidget;
+
+    // Can't edit if there is nothing to edit!
+    if(table->rowCount() < 1)
+    {
+        return;
+    }
+
+    table->setItem(activeRow, activeColumn, new QTableWidgetItem("Edited"));
 }
