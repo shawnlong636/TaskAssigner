@@ -10,8 +10,7 @@ MainWindow::MainWindow(QWidget *parent)
     // Disable editing of table
     ui->tableWidget->setEditTriggers(QAbstractItemView::NoEditTriggers);
 
-    activeRow = 0;
-    activeColumn = 0;
+    activeRow = -1;
 }
 
 MainWindow::~MainWindow()
@@ -44,7 +43,6 @@ void MainWindow::on_addButton_clicked()
 void MainWindow::on_tableWidget_cellClicked(int row, int column)
 {
     activeRow = row;
-    activeColumn = column;
 }
 
 // TODO: Create window prompting user to input name, description and due date
@@ -52,11 +50,27 @@ void MainWindow::on_editButton_clicked()
 {
     QTableWidget* table = ui->tableWidget;
 
-    // Can't edit if there is nothing to edit!
-    if(table->rowCount() < 1)
+    // Can't edit if there is nothing to edit or if no row is active yet
+    if(table->rowCount() < 1 || activeRow == -1)
     {
         return;
     }
 
-    table->setItem(activeRow, activeColumn, new QTableWidgetItem("Edited"));
+    table->setItem(activeRow, 0, new QTableWidgetItem("Edited"));
+    table->setItem(activeRow, 1, new QTableWidgetItem("Edited"));
+    table->setItem(activeRow, 2, new QTableWidgetItem("Edited"));
+}
+
+// TODO: Add confirmation Dialog window before removing
+void MainWindow::on_removeButton_clicked()
+{
+    QTableWidget* table = ui->tableWidget;
+
+    // Can't remove if there is nothing to remove or if no row is active yet
+    if(table->rowCount() < 1 || activeRow == -1)
+    {
+        return;
+    }
+
+    table->removeRow(activeRow);
 }

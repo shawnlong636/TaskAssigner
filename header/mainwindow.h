@@ -22,10 +22,11 @@ private slots:
 
     void on_editButton_clicked();
 
+    void on_removeButton_clicked();
+
 private:
     Ui::MainWindow *ui;
 
     int activeRow;
-    int activeColumn;
 };
 #endif // MAINWINDOW_H
