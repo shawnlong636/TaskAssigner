@@ -15,7 +15,18 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+private slots:
+    void on_addButton_clicked();
+
+    void on_tableWidget_cellClicked(int row, int column);
+
+    void on_editButton_clicked();
+
+    void on_removeButton_clicked();
+
 private:
     Ui::MainWindow *ui;
+
+    int activeRow;
 };
 #endif // MAINWINDOW_H
