@@ -20,6 +20,10 @@ private:
     QVector<Task*> taskList;
 
 public:
+    Task();
+    Task(QString name, QString desc, QDate date, CompletionState* state = nullptr);
+    ~Task();
+
     bool checkCompletion();
     std::string toDo();
     void changeState(CompletionState* state);

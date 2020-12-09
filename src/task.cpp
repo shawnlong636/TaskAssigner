@@ -1,4 +1,39 @@
 #include "../header/task.h"
+#include "../header/Incomplete.h"
+
+Task::Task()
+{
+    state = new Incomplete(this);
+
+    taskName = "Untitled";
+    description = "No description";
+    dueDate = QDate::currentDate();
+}
+
+Task::Task(QString name, QString desc, QDate date, CompletionState* state /* = nullptr */)
+{
+    if(state == nullptr)
+    {
+        state = new Incomplete(this);
+    }
+
+    taskName = name;
+    description = desc;
+    dueDate = date;
+}
+
+Task::~Task()
+{
+    if(state)
+    {
+        delete state;
+    }
+
+    for(auto t : taskList)
+    {
+        delete t;
+    }
+}
 
 bool Task::checkCompletion()
 {
