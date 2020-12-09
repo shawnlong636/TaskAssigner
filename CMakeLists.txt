@@ -61,6 +61,8 @@ add_executable(unit_tests
     src/inProgress.cpp
     src/task.cpp
     test/test.cpp
+    test/stateTests.h
+    test/taskTests.h
 )
 
 target_link_libraries(TaskAssigner Qt5::Widgets)
