@@ -72,4 +72,10 @@ void MainWindow::on_removeButton_clicked()
     }
 
     table->removeRow(activeRow);
+
+    // Inactivate activeRow in case removed all rows below currently selected row
+    if(table->rowCount() - 1 < activeRow)
+    {
+        activeRow = -1;
+    }
 }
