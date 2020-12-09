@@ -15,7 +15,7 @@ class Task
 private:
     QString taskName;
     QString description;
-    QDate* dueDate;
+    QDate dueDate;
     CompletionState* state;// Added newly implemented CompletionState
     QVector<Task*> taskList;
 
