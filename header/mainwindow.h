@@ -24,6 +24,8 @@ private slots:
 
     void on_removeButton_clicked();
 
+    void on_showButton_clicked();
+
 private:
     Ui::MainWindow *ui;
 

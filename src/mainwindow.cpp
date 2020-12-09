@@ -79,3 +79,27 @@ void MainWindow::on_removeButton_clicked()
         activeRow = -1;
     }
 }
+
+void MainWindow::on_showButton_clicked()
+{
+    // TODO: CHANGE THIS REF TO THE PARENT TASK NAME
+    QString windowTitle = "Subtasks (<task_name>)";
+    if (this->parent() == nullptr)
+        this->setWindowTitle("Task Assigner (Main)");
+
+    MainWindow* window = new MainWindow(this);
+    window->move(this->pos().x()+20,this->pos().y()+20);
+    window->setWindowTitle(windowTitle);
+
+    // TODO: Populate subtasks in window before showing
+    QTableWidget* subtask_table = window->ui->tableWidget;
+
+    int row = 0;
+    // Loop through parent task
+    subtask_table->insertRow(row);
+    subtask_table->setItem(row, 0, new QTableWidgetItem("Dummy Subtask"));
+    subtask_table->setItem(row, 1, new QTableWidgetItem("Dummy Subtask"));
+    subtask_table->setItem(row, 2, new QTableWidgetItem("Dummy Duedate"));
+
+    window->show();
+}
