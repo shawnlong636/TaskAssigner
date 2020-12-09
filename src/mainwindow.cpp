@@ -27,12 +27,12 @@ void MainWindow::on_addButton_clicked()
     // As an example, simply adds rows for now
     QTableWidget* table = ui->tableWidget;
 
+    // Add row after activeRow, if no row is active add first row
+    int row = activeRow > -1 ? activeRow + 1 : 0;
+
     // Create new task and add to root
     Task* addedTask = new Task();
     rootTask->addSubtask(addedTask);
-
-    // Add row after activeRow, if no row is active add first row
-    int row = activeRow > -1 ? activeRow + 1 : 0;
 
     table->insertRow(row);
 
@@ -83,6 +83,7 @@ void MainWindow::on_removeButton_clicked()
         return;
     }
 
+    rootTask->removeSubtaskAt(activeRow);
     table->removeRow(activeRow);
 
     // Inactivate activeRow in case removed all rows below currently selected row
