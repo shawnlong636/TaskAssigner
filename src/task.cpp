@@ -10,7 +10,7 @@ Task::Task()
     dueDate = QDate::currentDate();
 }
 
-Task::Task(QString name, QString desc, QDate date, CompletionState* state /* = nullptr */)
+Task::Task(QString name, QString desc /* = "No description"*/, QDate date /* = QDate::currentDate()*/, CompletionState* state /* = nullptr */)
 {
     if(state == nullptr)
     {

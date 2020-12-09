@@ -21,7 +21,7 @@ private:
 
 public:
     Task();
-    Task(QString name, QString desc, QDate date, CompletionState* state = nullptr);
+    Task(QString name, QString desc = "No description", QDate date = QDate::currentDate(), CompletionState* state = nullptr);
     ~Task();
 
     bool checkCompletion();
