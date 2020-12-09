@@ -27,6 +27,7 @@ void MainWindow::on_addButton_clicked()
     // As an example, simply adds rows for now
     QTableWidget* table = ui->tableWidget;
 
+    // Create new task and add to root
     Task* addedTask = new Task();
     rootTask->addSubtask(addedTask);
 
@@ -61,9 +62,14 @@ void MainWindow::on_editButton_clicked()
         return;
     }
 
-    table->setItem(activeRow, 0, new QTableWidgetItem("Edited"));
-    table->setItem(activeRow, 1, new QTableWidgetItem("Edited"));
-    table->setItem(activeRow, 2, new QTableWidgetItem("Edited"));
+    Task* activeTask = rootTask->getSubtaskAt(activeRow);
+    activeTask->setName("Edited Name");
+    activeTask->setDescription("Edited Description");
+    activeTask->setDate(2021,1,1);
+
+    table->setItem(activeRow, 0, new QTableWidgetItem(QString::fromStdString(activeTask->getName())));
+    table->setItem(activeRow, 1, new QTableWidgetItem(QString::fromStdString(activeTask->getDescription())));
+    table->setItem(activeRow, 2, new QTableWidgetItem(QString::fromStdString(activeTask->getDate())));
 }
 
 // TODO: Add confirmation Dialog window before removing
