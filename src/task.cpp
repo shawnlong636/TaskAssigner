@@ -1,5 +1,6 @@
 #include "../header/task.h"
 #include "../header/Incomplete.h"
+#include <QtDebug>
 
 Task::Task()
 {
@@ -68,5 +69,11 @@ std::string Task::getDescription() {
     return description.toStdString();
 }
 std::string Task::getDate() {
-        return dueDate.toString("MM-dd-yyyy").toStdString();
+    return dueDate.toString("MM-dd-yyyy").toStdString();
+}
+
+void Task::addSubtask(Task* taskToAdd)
+{
+    taskList.append(taskToAdd);
+    qDebug() << taskList.length();
 }

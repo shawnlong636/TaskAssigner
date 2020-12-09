@@ -33,6 +33,8 @@ public:
     std::string getName();
     std::string getDescription();
     std::string getDate();
+
+    void addSubtask(Task* taskToAdd);
 };
 
 #endif // TASK_H
