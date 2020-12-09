@@ -38,6 +38,13 @@
         </property>
        </widget>
       </item>
+      <item>
+       <widget class="QPushButton" name="showButton">
+        <property name="text">
+         <string>Show Subtasks</string>
+        </property>
+       </widget>
+      </item>
      </layout>
     </item>
     <item>
@@ -73,7 +80,7 @@
      <x>0</x>
      <y>0</y>
      <width>708</width>
-     <height>21</height>
+     <height>24</height>
     </rect>
    </property>
   </widget>
