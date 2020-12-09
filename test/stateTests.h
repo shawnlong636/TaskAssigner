@@ -26,15 +26,17 @@ TEST(CompleteTests, printToDo) { // FIXME: Create Test once decided on impl. of 
     
     CompletionState* state = new Complete(task);
 
-    EXPECT_EQ(state->printToDo(),"\t\t\tComplete\t\n");
+    std::string tempDate = QDate::currentDate().toString("MM-dd-yyyy").toStdString();
+
+    EXPECT_EQ(state->printToDo(),"Untitled\tNo description\t" + tempDate + "\tComplete\t\n");
 
     task->setName(name);
 
-    EXPECT_EQ(state->printToDo(),"Expense Report\t\t\tComplete\t\n");
+    EXPECT_EQ(state->printToDo(),"Expense Report\tNo description\t" + tempDate + "\tComplete\t\n");
     
     task->setDescription(desc);
     
-    EXPECT_EQ(state->printToDo(),"Expense Report\tFinish October Expense Report and send to Jack\t\tComplete\t\n");
+    EXPECT_EQ(state->printToDo(),"Expense Report\tFinish October Expense Report and send to Jack\t" + tempDate + "\tComplete\t\n");
 
     task->setDate(2020,11,15);
 
@@ -60,15 +62,17 @@ TEST(IncompleteTests, printToDo) { // FIXME: Create Test once decided on impl. o
     
     CompletionState* state = new Incomplete(task);
 
-    EXPECT_EQ(state->printToDo(),"\t\t\tIncomplete\t\n");
+    std::string tempDate = QDate::currentDate().toString("MM-dd-yyyy").toStdString();
+
+    EXPECT_EQ(state->printToDo(),"Untitled\tNo description\t" + tempDate + "\tIncomplete\t\n");
 
     task->setName(name);
 
-    EXPECT_EQ(state->printToDo(),"Finish Coding Project\t\t\tIncomplete\t\n");
+    EXPECT_EQ(state->printToDo(),"Finish Coding Project\tNo description\t" + tempDate + "\tIncomplete\t\n");
     
     task->setDescription(desc);
     
-    EXPECT_EQ(state->printToDo(),"Finish Coding Project\tPut the final touches on the coding project for CS 100\t\tIncomplete\t\n");
+    EXPECT_EQ(state->printToDo(),"Finish Coding Project\tPut the final touches on the coding project for CS 100\t" + tempDate + "\tIncomplete\t\n");
 
     task->setDate(2020,12,11);
 
@@ -94,15 +98,17 @@ TEST(InProgressTests, printToDo) { // FIXME: Create Test once decided on impl. o
     
     CompletionState* state = new InProgress(task);
 
-    EXPECT_EQ(state->printToDo(),"\t\t\tInProgress\t\n");
+    std::string tempDate = QDate::currentDate().toString("MM-dd-yyyy").toStdString();
+
+    EXPECT_EQ(state->printToDo(),"Untitled\tNo description\t" + tempDate + "\tInProgress\t\n");
 
     task->setName(name);
 
-    EXPECT_EQ(state->printToDo(),"Unit tests for state pattern\t\t\tInProgress\t\n");
+    EXPECT_EQ(state->printToDo(),"Unit tests for state pattern\tNo description\t" + tempDate + "\tInProgress\t\n");
     
     task->setDescription(desc);
     
-    EXPECT_EQ(state->printToDo(),"Unit tests for state pattern\tComplete the unit tests for the state pattern\t\tInProgress\t\n");
+    EXPECT_EQ(state->printToDo(),"Unit tests for state pattern\tComplete the unit tests for the state pattern\t" + tempDate + "\tInProgress\t\n");
 
     task->setDate(2020,11,30);
 
@@ -115,24 +121,26 @@ TEST(DynamicTests, IntegratedTest) {
     Task* task = new Task();
     task->changeState(new Incomplete(task));
 
+    std::string tempDate = QDate::currentDate().toString("MM-dd-yyyy").toStdString();
+
     EXPECT_FALSE(task->checkCompletion());
 
     task->setName("Perform a integrated test");
 
-    EXPECT_EQ(task->toDo(), "Perform a integrated test\t\t\tIncomplete\t\n");
+    EXPECT_EQ(task->toDo(), "Perform a integrated test\tNo description\t" + tempDate + "\tIncomplete\t\n");
     
     task->setName("Perform an integrated test");
-    EXPECT_EQ(task->toDo(), "Perform an integrated test\t\t\tIncomplete\t\n");
+    EXPECT_EQ(task->toDo(), "Perform an integrated test\tNo description\t" + tempDate + "\tIncomplete\t\n");
 
     task->changeState(new InProgress(task));
     
-    EXPECT_EQ(task->toDo(), "Perform an integrated test\t\t\tInProgress\t\n");
+    EXPECT_EQ(task->toDo(), "Perform an integrated test\tNo description\t" + tempDate + "\tInProgress\t\n");
 
     task->setDescription("Try really hard to write tests that'll break the code");
-    EXPECT_EQ(task->toDo(), "Perform an integrated test\tTry really hard to write tests that'll break the code\t\tInProgress\t\n");
+    EXPECT_EQ(task->toDo(), "Perform an integrated test\tTry really hard to write tests that'll break the code\t" + tempDate + "\tInProgress\t\n");
 
     task->setDescription("Not too bad! Keep working at it.");
-    EXPECT_EQ(task->toDo(), "Perform an integrated test\tNot too bad! Keep working at it.\t\tInProgress\t\n");
+    EXPECT_EQ(task->toDo(), "Perform an integrated test\tNot too bad! Keep working at it.\t" + tempDate + "\tInProgress\t\n");
 
     task->setDate(2020,12,1);
     EXPECT_EQ(task->toDo(), "Perform an integrated test\tNot too bad! Keep working at it.\t12-01-2020\tInProgress\t\n");
