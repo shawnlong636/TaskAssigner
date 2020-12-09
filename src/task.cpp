@@ -75,5 +75,5 @@ std::string Task::getDate() {
 void Task::addSubtask(Task* taskToAdd)
 {
     taskList.append(taskToAdd);
-    qDebug() << taskList.length();
+    qDebug() << "Current size of taskList = " << taskList.length();
 }
