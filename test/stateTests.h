@@ -1,3 +1,6 @@
+#ifndef STATETESTS_H
+#define STATETESTS_H
+
 #include "gtest/gtest.h"
 
 #include "../header/completionState.h"
@@ -139,3 +142,5 @@ TEST(DynamicTests, IntegratedTest) {
 
     delete task;
 }
+
+#endif // STATETESTS_H
