@@ -15,7 +15,7 @@ Task::Task(QString name, QString desc /* = "No description"*/, QDate date /* = Q
 {
     if(state == nullptr)
     {
-        state = new Incomplete(this);
+        this->state = new Incomplete(this);
     }
 
     taskName = name;
