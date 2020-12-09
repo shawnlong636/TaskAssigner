@@ -11,7 +11,7 @@ TEST(CompleteTests, checkCompletion) {
     CompletionState* state = new Complete(task);
 
     EXPECT_TRUE(state->checkCompletion());
-    delete state;
+
     delete task;
 }
 
@@ -38,7 +38,6 @@ TEST(CompleteTests, printToDo) { // FIXME: Create Test once decided on impl. of 
     EXPECT_EQ(state->printToDo(),"Expense Report\tFinish October Expense Report and send to Jack\t11-15-2020\tComplete\t\n");
 
     delete task;
-    delete state;
 }
 
 TEST(IncompleteTests, checkCompletion) {
@@ -47,7 +46,6 @@ TEST(IncompleteTests, checkCompletion) {
 
     EXPECT_FALSE(state->checkCompletion());
 
-    delete state;
     delete task;
 }
 
@@ -74,7 +72,6 @@ TEST(IncompleteTests, printToDo) { // FIXME: Create Test once decided on impl. o
     EXPECT_EQ(state->printToDo(),"Finish Coding Project\tPut the final touches on the coding project for CS 100\t12-11-2020\tIncomplete\t\n");
 
     delete task;
-    delete state;
 }
 
 TEST(InProgressTests, checkCompletion) {
@@ -83,7 +80,6 @@ TEST(InProgressTests, checkCompletion) {
 
     EXPECT_FALSE(state->checkCompletion());
 
-    delete state;
     delete task;
 }
 
@@ -110,7 +106,6 @@ TEST(InProgressTests, printToDo) { // FIXME: Create Test once decided on impl. o
     EXPECT_EQ(state->printToDo(),"Unit tests for state pattern\tComplete the unit tests for the state pattern\t11-30-2020\tInProgress\t\n");
 
     delete task;
-    delete state;
 }
 
 TEST(DynamicTests, IntegratedTest) {
@@ -141,4 +136,6 @@ TEST(DynamicTests, IntegratedTest) {
 
     task->changeState(new Complete(task));
     EXPECT_EQ(task->toDo(), "Perform an integrated test\tNot too bad! Keep working at it.\t12-01-2020\tComplete\t\n");
+
+    delete task;
 }
