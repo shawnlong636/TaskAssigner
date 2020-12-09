@@ -44,6 +44,9 @@ void MainWindow::on_addButton_clicked()
 
     // Setting due date
     table->setItem(row, 2, new QTableWidgetItem(QString::fromStdString(addedTask->getDate())));
+
+    // Setting completion status
+    table->setItem(row, 3, new QTableWidgetItem("Incomplete"));
 }
 
 void MainWindow::on_tableWidget_cellClicked(int row, int column)
