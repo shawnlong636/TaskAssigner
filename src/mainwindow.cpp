@@ -1,5 +1,6 @@
 #include "../header/mainwindow.h"
 #include "../ui/ui_mainwindow.h"
+#include "../header/task.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -11,6 +12,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->tableWidget->setEditTriggers(QAbstractItemView::NoEditTriggers);
 
     activeRow = -1;
+    rootTask = new Task("Root");
 }
 
 MainWindow::~MainWindow()
