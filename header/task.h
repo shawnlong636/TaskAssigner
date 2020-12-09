@@ -4,7 +4,7 @@
 #include <QString>
 #include <QDate>
 #include <QVector>
-#include "completionState.h" // Needed for ChangeState
+#include "CompletionState.h" // Needed for ChangeState
 #include <string>
 #include <iostream>
 
