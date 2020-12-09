@@ -15,6 +15,7 @@ MainWindow::MainWindow(QWidget *parent)
     rootTask = new Task("Root");
 }
 
+// TODO: Delete rootTask here only if this is the root window!
 MainWindow::~MainWindow()
 {
     delete ui;
@@ -26,19 +27,22 @@ void MainWindow::on_addButton_clicked()
     // As an example, simply adds rows for now
     QTableWidget* table = ui->tableWidget;
 
+    Task* addedTask = new Task();
+    rootTask->addSubtask(addedTask);
+
     // Add row after activeRow, if no row is active add first row
     int row = activeRow > -1 ? activeRow + 1 : 0;
 
     table->insertRow(row);
 
     // Setting name
-    table->setItem(row, 0, new QTableWidgetItem("Task name"));
+    table->setItem(row, 0, new QTableWidgetItem(QString::fromStdString(addedTask->getName())));
 
     // Setting description
-    table->setItem(row, 1, new QTableWidgetItem("Description"));
+    table->setItem(row, 1, new QTableWidgetItem(QString::fromStdString(addedTask->getDescription())));
 
     // Setting due date
-    table->setItem(row, 2, new QTableWidgetItem("Due date"));
+    table->setItem(row, 2, new QTableWidgetItem(QString::fromStdString(addedTask->getDate())));
 }
 
 void MainWindow::on_tableWidget_cellClicked(int row, int column)
