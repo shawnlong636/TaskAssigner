@@ -82,8 +82,39 @@ Task* Task::getSubtaskAt(int index)
     return taskList[index];
 }
 
-void Task::addSubtask(Task* taskToAdd)
+void Task::addSubtask(Task* taskToAdd, int index /* = -1 */)
 {
-    taskList.append(taskToAdd);
+    if(index < -1 || index >= taskList.length())
+    {
+        qDebug() << "Can't add task at index " << index;
+        return;
+    }
+
+    if(index == -1)
+    {
+        // If no index specified, add at end
+        taskList.append(taskToAdd);
+    }
+    else
+    {
+        // Otherwise insert at appropriate location
+        taskList.insert(index, taskToAdd);
+    }
+
+    qDebug() << "Current size of taskList = " << taskList.length();
+}
+
+void Task::removeSubtaskAt(int index)
+{
+    if(index >= taskList.length() || index < 0)
+    {
+        qDebug() << "No task to remove at index " << index;
+        return;
+    }
+
+    delete taskList[index];
+
+    taskList.remove(index);
+
     qDebug() << "Current size of taskList = " << taskList.length();
 }

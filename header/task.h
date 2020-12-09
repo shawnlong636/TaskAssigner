@@ -35,7 +35,8 @@ public:
     std::string getDate();
 
     Task* getSubtaskAt(int index);
-    void addSubtask(Task* taskToAdd);
+    void addSubtask(Task* taskToAdd, int index = -1);
+    void removeSubtaskAt(int index);
 };
 
 #endif // TASK_H
