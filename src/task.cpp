@@ -72,6 +72,16 @@ std::string Task::getDate() {
     return dueDate.toString("MM-dd-yyyy").toStdString();
 }
 
+Task* Task::getSubtaskAt(int index)
+{
+    if(index >= taskList.length() || index < 0)
+    {
+        return nullptr;
+    }
+
+    return taskList[index];
+}
+
 void Task::addSubtask(Task* taskToAdd)
 {
     taskList.append(taskToAdd);

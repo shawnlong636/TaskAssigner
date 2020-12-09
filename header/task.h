@@ -34,6 +34,7 @@ public:
     std::string getDescription();
     std::string getDate();
 
+    Task* getSubtaskAt(int index);
     void addSubtask(Task* taskToAdd);
 };
 
