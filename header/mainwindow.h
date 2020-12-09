@@ -3,6 +3,9 @@
 
 #include <QMainWindow>
 
+// Forward declaration
+class Task;
+
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -28,5 +31,8 @@ private:
     Ui::MainWindow *ui;
 
     int activeRow;
+
+    // All tasks should be children of this task
+    Task* rootTask;
 };
 #endif // MAINWINDOW_H
