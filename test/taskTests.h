@@ -62,4 +62,27 @@ TEST(AddTests, ConstructorTest) {
     delete root;
 }
 
+TEST(AddTests, RemoveTest) {
+
+    Task* root = new Task("Root");
+    root->addSubtask(new Task("FirstTask"));
+    root->addSubtask(new Task("SecondTask"));
+    root->addSubtask(new Task("ThirdTask"));
+    std::string tempDate = QDate::currentDate().toString("MM-dd-yyyy").toStdString();
+
+    EXPECT_EQ(root->getSubtaskAt(2)->toDo(),"ThirdTask\tNo description\t" + tempDate + "\tIncomplete\t\n");
+
+    root->removeSubtaskAt(2);
+
+    EXPECT_EQ(root->getSubtaskAt(2), nullptr);
+
+    EXPECT_EQ(root->getSubtaskAt(1)->toDo(),"SecondTask\tNo description\t" + tempDate + "\tIncomplete\t\n");
+
+    root->removeSubtaskAt(1);
+
+    EXPECT_EQ(root->getSubtaskAt(1), nullptr);
+
+    delete root;
+}
+
 #endif // TASKTESTS_H
