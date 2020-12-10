@@ -22,8 +22,15 @@ MainWindow::~MainWindow()
     if (isRoot)
         delete rootTask;
 }
-void MainWindow::setRoot(bool isRoot) {
+
+void MainWindow::setIsRoot(bool isRoot) {
     this->isRoot = isRoot;
+}
+
+void MainWindow::setRootTask(Task* task)
+{
+    delete rootTask;
+    rootTask = task;
 }
 
 // TODO: Create window prompting user to input name, description and due date
@@ -103,24 +110,47 @@ void MainWindow::on_removeButton_clicked()
 
 void MainWindow::on_showButton_clicked()
 {
-    // TODO: CHANGE THIS REF TO THE PARENT TASK NAME
-    QString windowTitle = "Subtasks (<task_name>)";
-    if (this->parent() == nullptr)
-        this->setWindowTitle("Task Assigner (Main)");
+    QTableWidget* table = ui->tableWidget;
 
-    MainWindow* window = new MainWindow(this);
-    window->move(this->pos().x()+20,this->pos().y()+20);
-    window->setWindowTitle(windowTitle);
+    // Can't show subtasks if there are no tasks at all or if no row is active yet
+    if(table->rowCount() < 1 || activeRow == -1)
+    {
+        return;
+    }
 
-    // TODO: Populate subtasks in window before showing
-    QTableWidget* subtask_table = window->ui->tableWidget;
+    Task* shownSubtask = rootTask->getSubtaskAt(activeRow);
+    if(shownSubtask)
+    {
+        QString windowTitle = "Subtasks (" + QString::fromStdString(shownSubtask->getName()) + ")";
+        if (this->parent() == nullptr)
+            this->setWindowTitle("Task Assigner (Main)");
 
-    int row = 0;
-    // Loop through parent task
-    subtask_table->insertRow(row);
-    subtask_table->setItem(row, 0, new QTableWidgetItem("Dummy Subtask"));
-    subtask_table->setItem(row, 1, new QTableWidgetItem("Dummy Subtask"));
-    subtask_table->setItem(row, 2, new QTableWidgetItem("Dummy Duedate"));
+        MainWindow* window = new MainWindow(this);
+        window->move(this->pos().x()+20,this->pos().y()+20);
+        window->setWindowTitle(windowTitle);
 
-    window->show();
+        // Must set appropriate rootTask
+        window->setRootTask(shownSubtask);
+
+        QTableWidget* subtask_table = window->ui->tableWidget;
+
+        // Loop through subtasks to populate new table
+        int row = 0;
+
+        for(auto i = 0; i < shownSubtask->getNumOfSubtasks(); ++i)
+        {
+            subtask_table->insertRow(row);
+
+            Task* currentSubTask = shownSubtask->getSubtaskAt(i);
+
+            subtask_table->setItem(row, 0, new QTableWidgetItem(QString::fromStdString(currentSubTask->getName())));
+            subtask_table->setItem(row, 1, new QTableWidgetItem(QString::fromStdString(currentSubTask->getDescription())));
+            subtask_table->setItem(row, 2, new QTableWidgetItem(QString::fromStdString(currentSubTask->getDate())));
+            subtask_table->setItem(row, 3, new QTableWidgetItem("Incomplete"));
+
+            ++row;
+        }
+
+        window->show();
+    }
 }
