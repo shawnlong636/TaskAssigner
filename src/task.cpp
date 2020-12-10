@@ -11,12 +11,9 @@ Task::Task()
     dueDate = QDate::currentDate();
 }
 
-Task::Task(QString name, QString desc /* = "No description"*/, QDate date /* = QDate::currentDate()*/, CompletionState* state /* = nullptr */)
+Task::Task(QString name, QString desc /* = "No description"*/, QDate date /* = QDate::currentDate()*/)
 {
-    if(state == nullptr)
-    {
-        this->state = new Incomplete(this);
-    }
+    this->state = new Incomplete(this);
 
     taskName = name;
     description = desc;
