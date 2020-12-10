@@ -12,12 +12,11 @@ TEST(AddTests, AddOne) {
 
     Task* root = new Task("Root");
     root->addSubtask(new Task("FirstTask"));
-    root->addSubtask(new Task("SecondTask"));
     std::string tempDate = QDate::currentDate().toString("MM-dd-yyyy").toStdString();
 
     qDebug() << "About to call toDo()";
 
-    EXPECT_EQ(root->getSubtaskAt(0)->toDo(),"Untitled\tNo description\t" + tempDate + "\tIncomplete\t\n");
+    EXPECT_EQ(root->getSubtaskAt(0)->toDo(),"FirstTask\tNo description\t" + tempDate + "\tIncomplete\t\n");
 
     delete root;
 }
