@@ -3,11 +3,11 @@
 
 #include "gtest/gtest.h"
 
-#include "../header/completionState.h"
+#include "../header/CompletionState.h"
 #include "../header/task.h"
-#include "../header/complete.h"
-#include "../header/incomplete.h"
-#include "../header/inProgress.h"
+#include "../header/Complete.h"
+#include "../header/Incomplete.h"
+#include "../header/InProgress.h"
 
 TEST(CompleteTests, checkCompletion) {
     Task* task = new Task();
