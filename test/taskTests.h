@@ -5,9 +5,20 @@
 #include "gtest/gtest.h"
 
 #include "../header/task.h"
-#include <QtDebug>
 
 TEST(AddTests, AddOne) {
+    Task* root = new Task("Root");
+    root->addSubtask(new Task("FirstTask"));
+    std::string tempDate = QDate::currentDate().toString("MM-dd-yyyy").toStdString();
+
+    EXPECT_EQ(root->getSubtaskAt(0)->toDo(),"FirstTask\tNo description\t" + tempDate + "\tIncomplete\t\n");
+
+
+
+    delete root;
+}
+
+TEST(AddTests, AddThree) {
     qDebug() << "AddTest starts here";
 
     Task* root = new Task("Root");
