@@ -4,7 +4,7 @@
 #include <QString>
 #include <QDate>
 #include <QVector>
-#include "completionState.h" // Needed for ChangeState
+#include "CompletionState.h" // Needed for ChangeState
 #include <string>
 #include <iostream>
 
@@ -15,11 +15,15 @@ class Task
 private:
     QString taskName;
     QString description;
-    QDate* dueDate;
+    QDate dueDate;
     CompletionState* state;// Added newly implemented CompletionState
     QVector<Task*> taskList;
 
 public:
+    Task();
+    Task(QString name, QString desc = "No description", QDate date = QDate::currentDate());
+    ~Task();
+
     bool checkCompletion();
     std::string toDo();
     void changeState(CompletionState* state);
@@ -29,6 +33,10 @@ public:
     std::string getName();
     std::string getDescription();
     std::string getDate();
+
+    Task* getSubtaskAt(int index);
+    void addSubtask(Task* taskToAdd, int index = -1);
+    void removeSubtaskAt(int index);
 };
 
 #endif // TASK_H
