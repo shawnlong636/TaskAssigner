@@ -16,7 +16,6 @@ MainWindow::MainWindow(QWidget *parent)
     rootTask = new Task("Root");
 }
 
-// TODO: Delete rootTask here only if this is the root window!
 MainWindow::~MainWindow()
 {
     delete ui;
