@@ -17,7 +17,8 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-    void setRoot(bool isRoot);
+    void setIsRoot(bool isRoot);
+    void setRootTask(Task* task);
 
 private slots:
     void on_addButton_clicked();
