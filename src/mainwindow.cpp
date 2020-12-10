@@ -163,12 +163,21 @@ void MainWindow::on_actionAboutQt_triggered()
 
 void MainWindow::on_actionSave_triggered()
 {
-    //FIXME IMPLEMENT SAVING HERE
-    if (rootTask) {
-        for (int i = 0; i<rootTask->taskListSize(); i++) {
-            // print items
-        }
+    //FIXME Needs further testing and improvements
+    QString filename = QFileDialog::getSaveFileName(this,tr("Save File as"),QDir::homePath(),tr("Tab-delimitted (*.txt)")  );
+
+    std::ofstream ofs(filename.toStdString());
+    ofs << "test write";
+
+
+    ofs << "Parent,Name,Description,Date,Status\n";
+
+
+
+    for (int i = 0; i<rootTask->taskListSize(); i++) {
+        ofs << rootTask->getSubtaskAt(i)->toDo();
     }
+    ofs.close();
 }
 
 void MainWindow::on_actionAbout_triggered() // FIXME: ADD Arzhang's last name
