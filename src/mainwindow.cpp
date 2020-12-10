@@ -123,3 +123,27 @@ void MainWindow::on_showButton_clicked()
 
     window->show();
 }
+
+
+void MainWindow::on_actionAboutQt_triggered()
+{
+    QMessageBox::aboutQt(this);
+}
+
+void MainWindow::on_actionSave_triggered()
+{
+    //FIXME IMPLEMENT SAVING HERE
+    if (rootTask) {
+        for (int i = 0; i<rootTask->taskListSize(); i++) {
+            // print items
+        }
+    }
+}
+
+void MainWindow::on_actionAbout_triggered() // FIXME: ADD Arzhang's last name
+{
+    QString str = "This program is a final project by Yuval Bar, Shawn Long,"
+                    "and Arzhang for CS 100 at the University of California, Riverside."
+                    "Enjoy!";
+    QMessageBox::about(this,tr("title"),str);
+}
