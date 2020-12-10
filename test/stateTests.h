@@ -18,7 +18,7 @@ TEST(CompleteTests, checkCompletion) {
     delete task;
 }
 
-TEST(CompleteTests, printToDo) { // FIXME: Create Test once decided on impl. of printToDo
+TEST(CompleteTests, printToDo) { 
     Task* task = new Task();
     std::string name = "Expense Report";
     std::string desc = "Finish October Expense Report and send to Jack";
@@ -54,7 +54,7 @@ TEST(IncompleteTests, checkCompletion) {
     delete task;
 }
 
-TEST(IncompleteTests, printToDo) { // FIXME: Create Test once decided on impl. of printToDo
+TEST(IncompleteTests, printToDo) { 
     Task* task = new Task();
     std::string name = "Finish Coding Project";
     std::string desc = "Put the final touches on the coding project for CS 100";
@@ -90,7 +90,7 @@ TEST(InProgressTests, checkCompletion) {
     delete task;
 }
 
-TEST(InProgressTests, printToDo) { // FIXME: Create Test once decided on impl. of printToDo
+TEST(InProgressTests, printToDo) {
     Task* task = new Task();
     std::string name = "Unit tests for state pattern";
     std::string desc = "Complete the unit tests for the state pattern";
