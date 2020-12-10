@@ -20,6 +20,8 @@ MainWindow::MainWindow(QWidget *parent)
 MainWindow::~MainWindow()
 {
     delete ui;
+    if (isRoot)
+        delete rootTask;
 }
 void MainWindow::setRoot(bool isRoot) {
     this->isRoot = isRoot;
