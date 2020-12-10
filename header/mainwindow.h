@@ -3,6 +3,8 @@
 
 #include <QMainWindow>
 #include <QMessageBox>
+#include <QFileDialog>
+#include <fstream>
 
 // Forward declaration
 class Task;
