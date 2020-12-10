@@ -102,8 +102,7 @@ void MainWindow::on_removeButton_clicked()
 
 void MainWindow::on_showButton_clicked()
 {
-    // TODO: CHANGE THIS REF TO THE PARENT TASK NAME
-    QString windowTitle = "Subtasks (<task_name>)";
+    QString windowTitle = "Subtasks (" + QString::fromStdString(rootTask->getName()) + ")";
     if (this->parent() == nullptr)
         this->setWindowTitle("Task Assigner (Main)");
 
