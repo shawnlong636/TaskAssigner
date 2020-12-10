@@ -1,4 +1,4 @@
-#include "../header/incomplete.h"
+#include "../header/Incomplete.h"
 
 Incomplete::Incomplete(Task* task) : CompletionState(task) { }
 Incomplete::~Incomplete() { }

@@ -17,6 +17,7 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+    void setRoot(bool isRoot);
 
 private slots:
     void on_addButton_clicked();
@@ -33,6 +34,7 @@ private:
     Ui::MainWindow *ui;
 
     int activeRow;
+    bool isRoot;
 
     // All tasks should be children of this task
     Task* rootTask;

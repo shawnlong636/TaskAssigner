@@ -1,7 +1,7 @@
 #ifndef __INCOMPLETE_H__
 #define __INCOMPLETE_H__
 
-#include "completionState.h"
+#include "CompletionState.h"
 
 class Incomplete : public CompletionState {
     public:

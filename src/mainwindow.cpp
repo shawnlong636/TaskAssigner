@@ -7,6 +7,7 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    isRoot = false; // isRoot always initialized with False. Set to true in main.cpp only
 
     // Disable editing of table
     ui->tableWidget->setEditTriggers(QAbstractItemView::NoEditTriggers);
@@ -19,6 +20,9 @@ MainWindow::MainWindow(QWidget *parent)
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+void MainWindow::setRoot(bool isRoot) {
+    this->isRoot = isRoot;
 }
 
 // TODO: Create window prompting user to input name, description and due date

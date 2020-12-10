@@ -1,4 +1,4 @@
-#include "../header/complete.h"
+#include "../header/Complete.h"
 
 Complete::Complete(Task* task) : CompletionState(task) { }
 Complete::~Complete() { }

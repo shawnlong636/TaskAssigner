@@ -1,4 +1,4 @@
-#include "../header/inProgress.h"
+#include "../header/InProgress.h"
 
 InProgress::InProgress(Task* task) : CompletionState(task) { }
 InProgress::~InProgress() { }

@@ -1,7 +1,7 @@
 #ifndef __INPROGRESS_H__
 #define __INPROGRESS_H__
 
-#include "completionState.h"
+#include "CompletionState.h"
 
 class InProgress : public CompletionState {
     public:
