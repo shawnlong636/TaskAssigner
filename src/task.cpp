@@ -115,3 +115,8 @@ void Task::removeSubtaskAt(int index)
 
     qDebug() << "Current size of taskList = " << taskList.length();
 }
+
+int Task::getNumOfSubtasks()
+{
+    return taskList.length();
+}
