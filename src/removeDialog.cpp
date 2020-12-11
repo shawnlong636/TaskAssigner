@@ -2,15 +2,14 @@
 #include "../ui/ui_removeDialog.h"
 #include "../header/task.h"
 
-removeDialog::removeDialog(QWidget *parent, Task* taskToRemove) :
+removeDialog::removeDialog(QWidget *parent, Task* taskToRemove, int activeRow) :
     Dialog(parent),
     ui(new Ui::removeDialog)
 {
     ui->setupUi(this);
+    ui->label->setText("Are you sure you want to remove " + QString::fromStdString(taskToRemove->getName()) + "?");
 
-    focusedTask = taskToRemove;
-
-    ui->label->setText("Are you sure you want to remove " + QString::fromStdString(focusedTask->getName()) + "?");
+    row = activeRow;
 }
 
 removeDialog::~removeDialog()
@@ -24,5 +23,11 @@ void removeDialog::display() {
 
 void removeDialog::on_buttonBox_rejected()
 {
+    close();
+}
+
+void removeDialog::on_buttonBox_accepted()
+{
+    emit sendRowToRemove(row);
     close();
 }
