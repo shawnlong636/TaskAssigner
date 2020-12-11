@@ -37,11 +37,7 @@ public:
     Task* getSubtaskAt(int index);
     void addSubtask(Task* taskToAdd, int index = -1);
     void removeSubtaskAt(int index);
-<<<<<<< HEAD
     int getNumOfSubtasks();
-=======
-    int taskListSize();
->>>>>>> Added MenuBar, removed toolbars, and partially implemented save action
 };
 
 #endif // TASK_H

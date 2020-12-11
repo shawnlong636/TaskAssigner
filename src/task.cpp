@@ -116,12 +116,7 @@ void Task::removeSubtaskAt(int index)
     qDebug() << "Current size of taskList = " << taskList.length();
 }
 
-<<<<<<< HEAD
 int Task::getNumOfSubtasks()
 {
     return taskList.length();
-=======
-int Task::taskListSize() {
-    return taskList.size();
->>>>>>> Added MenuBar, removed toolbars, and partially implemented save action
 }
