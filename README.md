@@ -43,7 +43,9 @@
  > * Complete the sections below (i.e. Screenshots, Installation/Usage, Testing)
  > * Plan one more sprint (that you will not necessarily complete before the end of the quarter). Your In-progress and In-testing columns should be empty (you are not doing more work currently) but your TODO column should have a full sprint plan in it as you have done before. This should include any known bugs (there should be some) or new features you would like to add. These should appear as issues/cards on your Kanban board. 
  ## Screenshots
- > Screenshots of the input/output after running your application
+ ![screen1](./img/finalpro1.png)
+ ![screen2](./img/finalpro2.png)
+ ![screen3](./img/finalpro3.png)
  ## Installation/Usage
  >   - To run our program you need to download and install Qt
  >   - Clone this repository, and make sure to clone the google test file as well
