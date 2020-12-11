@@ -61,15 +61,16 @@ Unit testing provided by Google's [gtest](https://github.com/google/googletest)
 <img src="./img/finalpro1.png" alt="screen1" style="zoom:50%;" />
 
  ## Installation/Usage
- > * Non-Mac Users
- >   - To run our program you need to download and install Qt
- >   - Clone this repository, and make sure to clone the google test file as well
- >   - Open Qt, click on open project, and click on the CMakeLists.txt file attached to the project
- >   - Once CMake has ran TaskAssigner should be ready to be built!
- > * Mac Users Installation
- >   - First go to the tag page in this repository
- >   - Click on 1.0 and download the TaskAssigner.dmg file
- >   - Copy the app to applications folder to install
+  * Non-Mac Users
+    - To run our program you need to download and install Qt
+    - Clone this repository, and make sure to clone the google test file as well
+    - Open Qt, click on open project, and click on the CMakeLists.txt file attached to the project
+    - Once CMake has ran TaskAssigner should be ready to be built!
+  * Mac Users Installation
+    - First go to the tag page in this repository
+    - Click on 1.0 and download the TaskAssigner.dmg file
+    - Copy the app to applications folder to install
+    - Note: Users on MacOS Mojave or above may need to allow permissions via System Preferences > Security and Privacy > General > Allow
  ## Testing
  > How was your project tested/validated? If you used CI, you should have a "build passing" badge in this README.
  > - The project was tested through a series of various unit tests throught Google Tests.
