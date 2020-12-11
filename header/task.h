@@ -37,7 +37,7 @@ public:
     Task* getSubtaskAt(int index);
     void addSubtask(Task* taskToAdd, int index = -1);
     void removeSubtaskAt(int index);
-    int taskListSize();
+    int getNumOfSubtasks();
 };
 
 #endif // TASK_H
