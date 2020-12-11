@@ -30,9 +30,12 @@ public:
     void setName(std::string name); // Mock Function needed to test State functionality
     void setDescription(std::string desc); // Mock Function needed to test State functionality
     void setDate(int y, int m, int d); // Mock Function needed to test State functionality
+    void setQDate(QDate date);
     std::string getName();
     std::string getDescription();
     std::string getDate();
+    QDate getQDate();
+    CompletionState* getState();
 
     Task* getSubtaskAt(int index);
     void addSubtask(Task* taskToAdd, int index = -1);

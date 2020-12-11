@@ -67,6 +67,10 @@ void Task::setDate(int y, int m, int d) {
     this->dueDate = QDate(y,m,d);
 }
 
+void Task::setQDate(QDate date) {
+    this->dueDate = date;
+}
+
 std::string Task::getName() {
     return taskName.toStdString();
 }
@@ -75,6 +79,13 @@ std::string Task::getDescription() {
 }
 std::string Task::getDate() {
     return dueDate.toString("MM-dd-yyyy").toStdString();
+}
+QDate Task::getQDate() {
+    return dueDate;
+}
+
+CompletionState* Task::getState() {
+    return state;
 }
 
 Task* Task::getSubtaskAt(int index)
