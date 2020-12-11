@@ -1,6 +1,6 @@
 <ui version="4.0">
- <class>Remove_Dialog</class>
- <widget class="QDialog" name="Remove_Dialog">
+ <class>addDialog</class>
+ <widget class="QDialog" name="addDialog">
   <property name="geometry">
    <rect>
     <x>0</x>
