@@ -9,6 +9,7 @@ class Incomplete : public CompletionState {
         ~Incomplete();
         virtual bool checkCompletion() override;
         virtual std::string printToDo() override;
+        virtual std::string toStr() const override;
 };
 
 #endif // __INCOMPLETE_H__

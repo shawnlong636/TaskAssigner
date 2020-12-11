@@ -21,3 +21,7 @@ std::string Complete::printToDo() {
 
     return str;
 }
+
+std::string Complete::toStr() const {
+    return "complete";
+}

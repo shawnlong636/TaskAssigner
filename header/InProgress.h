@@ -9,6 +9,7 @@ class InProgress : public CompletionState {
         ~InProgress();
         virtual bool checkCompletion() override;
         virtual std::string printToDo() override;
+        virtual std::string toStr() const override;
 };
 
 #endif // __INPROGRESS_H__

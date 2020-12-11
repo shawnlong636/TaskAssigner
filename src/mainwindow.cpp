@@ -55,25 +55,24 @@ void MainWindow::on_tableWidget_cellClicked(int row, int column)
 // TODO: Create window prompting user to input name, description and due date
 void MainWindow::on_editButton_clicked()
 {
-    editDialog* edit = new editDialog(this);
-    edit->show();
-
     QTableWidget* table = ui->tableWidget;
-
     // Can't edit if there is nothing to edit or if no row is active yet
     if(table->rowCount() < 1 || activeRow == -1)
     {
         return;
     }
-
     Task* activeTask = rootTask->getSubtaskAt(activeRow);
-    activeTask->setName("Edited Name");
-    activeTask->setDescription("Edited Description");
-    activeTask->setDate(2021,1,1);
 
-    table->setItem(activeRow, 0, new QTableWidgetItem(QString::fromStdString(activeTask->getName())));
-    table->setItem(activeRow, 1, new QTableWidgetItem(QString::fromStdString(activeTask->getDescription())));
-    table->setItem(activeRow, 2, new QTableWidgetItem(QString::fromStdString(activeTask->getDate())));
+    editDialog* edit = new editDialog(this);
+    edit->show();
+    connect(edit, &editDialog::sendTaskData, this, &MainWindow::receiveExistingTask);
+    connect(this, &MainWindow::pushCurrentSettings,edit,&editDialog::receiveCurrentTask);
+
+    QString name = QString::fromStdString(activeTask->getName());
+    QString desc = QString::fromStdString(activeTask->getDescription());
+    QDate date = activeTask->getQDate();
+    CompletionState* state = activeTask->getState();
+    emit pushCurrentSettings(name,desc,date,*state);
 }
 
 // TODO: Add confirmation Dialog window before removing
@@ -200,4 +199,41 @@ void MainWindow::receiveNewTask(const QString& taskName, const QString& descript
     table->setItem(row, 3, new QTableWidgetItem("Incomplete"));
 }
 
+void MainWindow::receiveExistingTask(const QString& taskName, const QString& description, const QDate& dueDate, const QString& state) {
+    // TODO
+    QTableWidget* table = ui->tableWidget;
+    // Can't edit if there is nothing to edit or if no row is active yet
+    if(table->rowCount() < 1 || activeRow == -1)
+    {
+        return;
+    }
+    Task* activeTask = rootTask->getSubtaskAt(activeRow);
+
+    activeTask = rootTask->getSubtaskAt(activeRow);
+    activeTask->setName(taskName.toStdString());
+    activeTask->setDescription(description.toStdString());
+    activeTask->setQDate(dueDate);
+
+
+    if (state.toStdString() =="complete") {
+        activeTask->changeState(new Complete(activeTask));
+        table->setItem(activeRow,3, new QTableWidgetItem(QString::fromStdString("Complete")));
+    }
+
+    else if (state.toStdString()=="incomplete") {
+        activeTask->changeState(new Incomplete(activeTask));
+        table->setItem(activeRow,3, new QTableWidgetItem(QString::fromStdString("Incomplete")));
+    }
+
+    else {
+         activeTask->changeState(new InProgress(activeTask));
+         table->setItem(activeRow,3, new QTableWidgetItem(QString::fromStdString("In Progress")));
+    }
+
+
+    table->setItem(activeRow, 0, new QTableWidgetItem(QString::fromStdString(activeTask->getName())));
+    table->setItem(activeRow, 1, new QTableWidgetItem(QString::fromStdString(activeTask->getDescription())));
+    table->setItem(activeRow, 2, new QTableWidgetItem(QString::fromStdString(activeTask->getDate())));
+
+}
 
