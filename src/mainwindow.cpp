@@ -174,7 +174,7 @@ void MainWindow::on_actionSave_triggered()
 
 
 
-    for (int i = 0; i<rootTask->taskListSize(); i++) {
+    for (int i = 0; i<rootTask->getNumOfSubtasks(); i++) {
         ofs << rootTask->getSubtaskAt(i)->toDo();
     }
     ofs.close();
