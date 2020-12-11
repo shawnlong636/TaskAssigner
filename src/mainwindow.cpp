@@ -60,7 +60,7 @@ void MainWindow::on_addButton_clicked()
     // Setting completion status
     table->setItem(row, 3, new QTableWidgetItem("Incomplete"));
 
-    addDialog* add = new addDialog(this);
+    addDialog* add = new addDialog(this); //FIXME change actual implementation
     add->show();
 }
 
@@ -93,6 +93,9 @@ void MainWindow::on_editButton_clicked()
 // TODO: Add confirmation Dialog window before removing
 void MainWindow::on_removeButton_clicked()
 {
+    removeDialog* remove = new removeDialog(this);
+    remove->show();
+    
     QTableWidget* table = ui->tableWidget;
 
     // Can't remove if there is nothing to remove or if no row is active yet
@@ -109,6 +112,7 @@ void MainWindow::on_removeButton_clicked()
     {
         activeRow = -1;
     }
+
 }
 
 void MainWindow::on_showButton_clicked()

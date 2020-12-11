@@ -44,6 +44,9 @@ set(SOURCE_FILES
     header/addDialog.h
     src/addDialog.cpp
     ui/addDialog.ui
+    header/removeDialog.h
+    src/removeDialog.cpp
+    ui/removeDialog.ui
 )
 
 add_project_meta(META_FILES_TO_INCLUDE)

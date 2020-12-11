@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include "addDialog.h"
+#include "removeDialog.h"
 #include <QMainWindow>
 #include <QMessageBox>
 #include <QFileDialog>
