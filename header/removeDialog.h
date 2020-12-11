@@ -19,6 +19,9 @@ public:
     ~removeDialog();
     virtual void display() override;
 
+private slots:
+    void on_buttonBox_rejected();
+
 private:
     Ui::removeDialog *ui;
     Task* focusedTask;

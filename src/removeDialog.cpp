@@ -21,3 +21,8 @@ removeDialog::~removeDialog()
 void removeDialog::display() {
     show();
 }
+
+void removeDialog::on_buttonBox_rejected()
+{
+    close();
+}
