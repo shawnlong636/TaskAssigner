@@ -29,7 +29,7 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Add a Task</string>
   </property>
   <layout class="QHBoxLayout" name="horizontalLayout">
    <item>

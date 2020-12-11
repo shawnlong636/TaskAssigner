@@ -56,9 +56,9 @@ Unit testing provided by Google's [gtest](https://github.com/google/googletest)
  > * Complete the sections below (i.e. Screenshots, Installation/Usage, Testing)
  > * Plan one more sprint (that you will not necessarily complete before the end of the quarter). Your In-progress and In-testing columns should be empty (you are not doing more work currently) but your TODO column should have a full sprint plan in it as you have done before. This should include any known bugs (there should be some) or new features you would like to add. These should appear as issues/cards on your Kanban board. 
  ## Screenshots
-  <img src="./img/finalpro2.png" alt="screen2" style="zoom:40%;" />
- <img src="./img/finalpro1.png" alt="screen1" style="zoom:50%;" />
+<img src="./img/finalpro2.png" alt="screen2" style="zoom:40%;" />
  <img src="./img/finalpro3.png" alt="screen3" style="zoom:50%;" />
+<img src="./img/finalpro1.png" alt="screen1" style="zoom:50%;" />
 
  ## Installation/Usage
  > * Non-Mac Users
