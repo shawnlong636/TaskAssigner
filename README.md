@@ -62,7 +62,12 @@
  ## Screenshots
  > Screenshots of the input/output after running your application
  ## Installation/Usage
- > Instructions on installing and running your application
+ >   -To run our program you need to download and install Qt
+ >   -Clone this repository, and make sure to clone the google test file as well
+ >   -Open Qt, click on open project, and click on the CMakeLists.txt file attached to the project
+ >   -Once CMake has ran TaskAssigner should be ready to be built!
  ## Testing
  > How was your project tested/validated? If you used CI, you should have a "build passing" badge in this README.
-
+ > -The project was tested through a series of various unit tests
+ > -We tested the values of our composite Task class
+ > -We also tested the CompletionState class
