@@ -163,19 +163,14 @@ void MainWindow::on_actionAboutQt_triggered()
 
 void MainWindow::on_actionExport_triggered()
 {
-    //FIXME Needs further testing and improvements
     QString filename = QFileDialog::getSaveFileName(this,tr("Save File as"),QDir::homePath(),tr("Tab-delimitted (*.txt)")  );
 
     std::ofstream ofs(filename.toStdString());
-    ofs << "test write";
 
-
-    ofs << "Parent,Name,Description,Date,Status\n";
-
-
+    ofs << "Parent\tName\tDescription\tDate\tStatus\n";
 
     for (int i = 0; i<rootTask->getNumOfSubtasks(); i++) {
-        ofs << rootTask->getSubtaskAt(i)->toDo();
+        ofs << "\t" << rootTask->getSubtaskAt(i)->toDo();
     }
     ofs.close();
 }

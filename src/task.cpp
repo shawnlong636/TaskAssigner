@@ -40,7 +40,15 @@ bool Task::checkCompletion()
 
 std::string Task::toDo()
 {
-    return state->printToDo();
+    std::string str = state->printToDo();
+
+    for (int i = 0; i<this->taskList.size();i++) {
+        if (taskList.at(i)) {
+            str += this->getName() + "\t";
+            str += taskList.at(i)->toDo();
+        }
+    }
+    return str;
 }
 
 void Task::changeState(CompletionState* state) {
