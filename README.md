@@ -47,11 +47,12 @@
  ![screen2](./img/finalpro2.png)
  ![screen3](./img/finalpro3.png)
  ## Installation/Usage
+ > * Non-Mac Users
  >   - To run our program you need to download and install Qt
  >   - Clone this repository, and make sure to clone the google test file as well
  >   - Open Qt, click on open project, and click on the CMakeLists.txt file attached to the project
  >   - Once CMake has ran TaskAssigner should be ready to be built!
- >Mac Users can download a pacakaged version
+ > * Mac Users Installation
  >   - First go to the tag page in this repository
  >   - Click on 1.0 and download the TaskAssigner.dmg file
  >   - Copy the app to applications folder to install
