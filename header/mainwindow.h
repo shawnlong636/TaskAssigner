@@ -44,7 +44,7 @@ private slots:
     void on_actionAbout_triggered();
 public slots:
     void receiveNewTask(const QString& taskName, const QString& description, const QDate& dueDate);
-
+    void receiveRemoveTask(int row);
 private:
     Ui::MainWindow *ui;
 
