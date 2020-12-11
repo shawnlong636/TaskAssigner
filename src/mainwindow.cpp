@@ -72,6 +72,9 @@ void MainWindow::on_tableWidget_cellClicked(int row, int column)
 // TODO: Create window prompting user to input name, description and due date
 void MainWindow::on_editButton_clicked()
 {
+    editDialog* edit = new editDialog(this);
+    edit->show();
+
     QTableWidget* table = ui->tableWidget;
 
     // Can't edit if there is nothing to edit or if no row is active yet
@@ -95,7 +98,7 @@ void MainWindow::on_removeButton_clicked()
 {
     removeDialog* remove = new removeDialog(this);
     remove->show();
-    
+
     QTableWidget* table = ui->tableWidget;
 
     // Can't remove if there is nothing to remove or if no row is active yet

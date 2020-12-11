@@ -3,6 +3,7 @@
 
 #include "addDialog.h"
 #include "removeDialog.h"
+#include "editDialog.h"
 #include <QMainWindow>
 #include <QMessageBox>
 #include <QFileDialog>
