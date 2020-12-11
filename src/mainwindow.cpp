@@ -177,10 +177,8 @@ void MainWindow::on_actionExport_triggered()
 
 void MainWindow::on_actionAbout_triggered() // FIXME: ADD Arzhang's last name
 {
-    QString str = "This program is a final project by Yuval Bar, Shawn Long,"
-                    "and Arzhang for CS 100 at the University of California, Riverside."
-                    "Enjoy!";
-    QMessageBox::about(this,tr("title"),str);
+    QString str = "This program is a final project by Yuval Bar, Shawn Long, and Arzhang for CS 100 at the University of California, Riverside.\nEnjoy!";
+    QMessageBox::about(this,tr("About"),str);
 }
 
 
