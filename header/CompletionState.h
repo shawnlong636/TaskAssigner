@@ -15,6 +15,7 @@ class CompletionState {
         virtual ~CompletionState() { }
         virtual bool checkCompletion() = 0;
         virtual std::string printToDo() = 0;
+        virtual std::string toStr() const = 0;
 };
 
 #endif // __COMPLETIONSTATE_H__

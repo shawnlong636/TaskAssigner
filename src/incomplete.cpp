@@ -21,3 +21,7 @@ std::string Incomplete::printToDo() {
 
     return str;
 }
+
+std::string Incomplete::toStr() const {
+    return "incomplete";
+}

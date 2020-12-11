@@ -4,6 +4,9 @@
 #include "addDialog.h"
 #include "removeDialog.h"
 #include "editDialog.h"
+#include "InProgress.h"
+#include "Incomplete.h"
+#include "Complete.h"
 #include <QMainWindow>
 #include <QMessageBox>
 #include <QFileDialog>
@@ -44,7 +47,11 @@ private slots:
     void on_actionAbout_triggered();
 public slots:
     void receiveNewTask(const QString& taskName, const QString& description, const QDate& dueDate);
+    void receiveExistingTask(const QString& taskName, const QString& description, const QDate& dueDate, const QString& state);
     void receiveRemoveTask(int row);
+signals:
+    void pushCurrentSettings(const QString& name, const QString& desc, const QDate& date, const CompletionState& state);
+
 private:
     Ui::MainWindow *ui;
 

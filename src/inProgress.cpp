@@ -21,3 +21,7 @@ std::string InProgress::printToDo() {
 
     return str;
 }
+
+std::string InProgress::toStr() const {
+    return "inprogress";
+}
