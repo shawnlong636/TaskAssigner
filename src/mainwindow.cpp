@@ -92,15 +92,9 @@ void MainWindow::on_removeButton_clicked()
     removeDialog* remove = new removeDialog(this, taskToRemove);
     remove->display();
 
-    rootTask->removeSubtaskAt(activeRow);
-    table->removeRow(activeRow);
+    connect(remove, &removeDialog::sendRowToRemove, this, &MainWindow::receiveRemoveTask );
 
-    // Inactivate activeRow in case removed all rows below currently selected row
-    if(table->rowCount() - 1 < activeRow)
-    {
-        activeRow = -1;
-    }
-
+    // Removed handled in receiveRemoveTask()
 }
 
 void MainWindow::on_showButton_clicked()
@@ -200,6 +194,20 @@ void MainWindow::receiveNewTask(const QString& taskName, const QString& descript
 
     // Setting completion status
     table->setItem(row, 3, new QTableWidgetItem("Incomplete"));
+}
+
+void MainWindow::receiveRemoveTask(int row)
+{
+    QTableWidget* table = ui->tableWidget;
+
+    rootTask->removeSubtaskAt(row);
+    table->removeRow(row);
+
+    // Inactivate activeRow in case removed all rows below currently selected row
+    if(table->rowCount() - 1 < activeRow)
+    {
+        activeRow = -1;
+    }
 }
 
 
