@@ -96,9 +96,6 @@ void MainWindow::on_editButton_clicked()
 // TODO: Add confirmation Dialog window before removing
 void MainWindow::on_removeButton_clicked()
 {
-    removeDialog* remove = new removeDialog(this);
-    remove->show();
-
     QTableWidget* table = ui->tableWidget;
 
     // Can't remove if there is nothing to remove or if no row is active yet
@@ -106,6 +103,11 @@ void MainWindow::on_removeButton_clicked()
     {
         return;
     }
+
+    Task* taskToRemove = rootTask->getSubtaskAt(activeRow);
+
+    removeDialog* remove = new removeDialog(this, taskToRemove);
+    remove->display();
 
     rootTask->removeSubtaskAt(activeRow);
     table->removeRow(activeRow);
