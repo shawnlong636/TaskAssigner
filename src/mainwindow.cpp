@@ -21,6 +21,12 @@ MainWindow::~MainWindow()
     delete ui;
     if (isRoot)
         delete rootTask;
+    if (add)
+        delete add;
+    if (edit)
+        delete edit;
+    if (rmv)
+        delete rmv;
 }
 
 void MainWindow::setIsRoot(bool isRoot) {
@@ -36,32 +42,9 @@ void MainWindow::setRootTask(Task* task)
 // TODO: Create window prompting user to input name, description and due date
 void MainWindow::on_addButton_clicked()
 {
-    // As an example, simply adds rows for now
-    QTableWidget* table = ui->tableWidget;
-
-    // Add row after activeRow, if no row is active add first row
-    int row = activeRow > -1 ? activeRow + 1 : 0;
-
-    // Create new task and add to root
-    Task* addedTask = new Task();
-    rootTask->addSubtask(addedTask);
-
-    table->insertRow(row);
-
-    // Setting name
-    table->setItem(row, 0, new QTableWidgetItem(QString::fromStdString(addedTask->getName())));
-
-    // Setting description
-    table->setItem(row, 1, new QTableWidgetItem(QString::fromStdString(addedTask->getDescription())));
-
-    // Setting due date
-    table->setItem(row, 2, new QTableWidgetItem(QString::fromStdString(addedTask->getDate())));
-
-    // Setting completion status
-    table->setItem(row, 3, new QTableWidgetItem("Incomplete"));
-
-    addDialog* add = new addDialog(this); //FIXME change actual implementation
-    add->show();
+    add = new addDialog(this);
+    add->display();
+    connect(add,&addDialog::sendTaskData, this, &MainWindow::receiveNewTask );
 }
 
 void MainWindow::on_tableWidget_cellClicked(int row, int column)
@@ -189,6 +172,32 @@ void MainWindow::on_actionAbout_triggered() // FIXME: ADD Arzhang's last name
 {
     QString str = "This program is a final project by Yuval Bar, Shawn Long, and Arzhang for CS 100 at the University of California, Riverside.\nEnjoy!";
     QMessageBox::about(this,tr("About"),str);
+}
+
+void MainWindow::receiveNewTask(const QString& taskName, const QString& description, const QDate& dueDate) {
+
+    QTableWidget* table = ui->tableWidget;
+
+    // Add row after activeRow, if no row is active add first row
+    int row = activeRow > -1 ? activeRow + 1 : 0;
+
+    // Create new task and add to root
+    Task* addedTask = new Task(taskName,description,dueDate);
+    rootTask->addSubtask(addedTask);
+
+    table->insertRow(row);
+
+    // Setting name
+    table->setItem(row, 0, new QTableWidgetItem(QString::fromStdString(addedTask->getName())));
+
+    // Setting description
+    table->setItem(row, 1, new QTableWidgetItem(QString::fromStdString(addedTask->getDescription())));
+
+    // Setting due date
+    table->setItem(row, 2, new QTableWidgetItem(QString::fromStdString(addedTask->getDate())));
+
+    // Setting completion status
+    table->setItem(row, 3, new QTableWidgetItem("Incomplete"));
 }
 
 

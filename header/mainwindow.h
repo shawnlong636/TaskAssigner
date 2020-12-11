@@ -42,6 +42,8 @@ private slots:
     void on_actionExport_triggered();
 
     void on_actionAbout_triggered();
+public slots:
+    void receiveNewTask(const QString& taskName, const QString& description, const QDate& dueDate);
 
 private:
     Ui::MainWindow *ui;
@@ -51,5 +53,8 @@ private:
 
     // All tasks should be children of this task
     Task* rootTask;
+    addDialog* add;
+    editDialog* edit;
+    removeDialog* rmv;
 };
 #endif // MAINWINDOW_H
