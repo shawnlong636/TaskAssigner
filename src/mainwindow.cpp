@@ -59,6 +59,9 @@ void MainWindow::on_addButton_clicked()
 
     // Setting completion status
     table->setItem(row, 3, new QTableWidgetItem("Incomplete"));
+
+    addDialog* add = new addDialog(this);
+    add->show();
 }
 
 void MainWindow::on_tableWidget_cellClicked(int row, int column)

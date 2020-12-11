@@ -40,6 +40,10 @@ set(SOURCE_FILES
     src/incomplete.cpp
     src/inProgress.cpp
     header/task.h
+    header/dialog.h
+    header/addDialog.h
+    src/addDialog.cpp
+    ui/addDialog.ui
 )
 
 add_project_meta(META_FILES_TO_INCLUDE)
