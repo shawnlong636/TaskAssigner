@@ -24,7 +24,6 @@ set(CMAKE_AUTORCC ON)
 # set(COMPANY "Example")
 # set(COPYRIGHT "Copyright (c) 2014 Vincent Lee. All rights reserved.")
 # set(IDENTIFIER "com.example.Example")
-set(RESOURCE_FOLDER img)
 
 set(SOURCE_FILES
     src/main.cpp
@@ -42,7 +41,7 @@ set(SOURCE_FILES
     header/task.h
 )
 
-add_project_meta(META_FILES_TO_INCLUDE)
+# add_project_meta(META_FILES_TO_INCLUDE)
 
 # set(RESOURCE_FILES example.qrc)
 
