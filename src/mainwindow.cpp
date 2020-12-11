@@ -39,7 +39,6 @@ void MainWindow::setRootTask(Task* task)
     rootTask = task;
 }
 
-// TODO: Create window prompting user to input name, description and due date
 void MainWindow::on_addButton_clicked()
 {
     add = new addDialog(this);
@@ -52,7 +51,6 @@ void MainWindow::on_tableWidget_cellClicked(int row, int column)
     activeRow = row;
 }
 
-// TODO: Create window prompting user to input name, description and due date
 void MainWindow::on_editButton_clicked()
 {
     QTableWidget* table = ui->tableWidget;
@@ -75,7 +73,6 @@ void MainWindow::on_editButton_clicked()
     emit pushCurrentSettings(name,desc,date,*state);
 }
 
-// TODO: Add confirmation Dialog window before removing
 void MainWindow::on_removeButton_clicked()
 {
     QTableWidget* table = ui->tableWidget;
@@ -161,9 +158,9 @@ void MainWindow::on_actionExport_triggered()
     ofs.close();
 }
 
-void MainWindow::on_actionAbout_triggered() // FIXME: ADD Arzhang's last name
+void MainWindow::on_actionAbout_triggered()
 {
-    QString str = "This program is a final project by Yuval Bar, Shawn Long, and Arzhang for CS 100 at the University of California, Riverside.\nEnjoy!";
+    QString str = "This program is a final project by Yuval Bar, Shawn Long, and Arzhang Valadhkani for CS 100 at the University of California, Riverside.\nEnjoy!";
     QMessageBox::about(this,tr("About"),str);
 }
 
@@ -208,7 +205,6 @@ void MainWindow::receiveRemoveTask(int row)
 }
 
 void MainWindow::receiveExistingTask(const QString& taskName, const QString& description, const QDate& dueDate, const QString& state) {
-    // TODO
     QTableWidget* table = ui->tableWidget;
     // Can't edit if there is nothing to edit or if no row is active yet
     if(table->rowCount() < 1 || activeRow == -1)

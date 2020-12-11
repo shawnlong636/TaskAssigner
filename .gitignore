@@ -85,6 +85,7 @@ bin/
 # Executbables
 # --------
 TaskAssigner
+TaskAssigner.dmg
 unit_tests
 
 # VSCode Files
