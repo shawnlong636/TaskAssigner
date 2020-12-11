@@ -2,6 +2,9 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QMessageBox>
+#include <QFileDialog>
+#include <fstream>
 
 // Forward declaration
 class Task;
@@ -30,6 +33,12 @@ private slots:
     void on_removeButton_clicked();
 
     void on_showButton_clicked();
+
+    void on_actionAboutQt_triggered();
+
+    void on_actionExport_triggered();
+
+    void on_actionAbout_triggered();
 
 private:
     Ui::MainWindow *ui;
