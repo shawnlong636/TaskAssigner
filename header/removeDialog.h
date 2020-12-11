@@ -15,7 +15,7 @@ class removeDialog : public Dialog
     Q_OBJECT
 
 public:
-    removeDialog(QWidget *parent = nullptr, Task* taskToRemove = nullptr, int activeRow = 0);
+    removeDialog(QWidget *parent = nullptr, Task* rootTask = nullptr, int activeRow = 0);
     ~removeDialog();
     virtual void display() override;
 

@@ -87,9 +87,7 @@ void MainWindow::on_removeButton_clicked()
         return;
     }
 
-    Task* taskToRemove = rootTask->getSubtaskAt(activeRow);
-
-    removeDialog* remove = new removeDialog(this, taskToRemove);
+    removeDialog* remove = new removeDialog(this, rootTask, activeRow);
     remove->display();
 
     connect(remove, &removeDialog::sendRowToRemove, this, &MainWindow::receiveRemoveTask );
@@ -179,7 +177,7 @@ void MainWindow::receiveNewTask(const QString& taskName, const QString& descript
 
     // Create new task and add to root
     Task* addedTask = new Task(taskName,description,dueDate);
-    rootTask->addSubtask(addedTask);
+    rootTask->addSubtask(addedTask, row);
 
     table->insertRow(row);
 

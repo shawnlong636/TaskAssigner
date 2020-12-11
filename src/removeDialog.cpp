@@ -2,12 +2,12 @@
 #include "../ui/ui_removeDialog.h"
 #include "../header/task.h"
 
-removeDialog::removeDialog(QWidget *parent, Task* taskToRemove, int activeRow) :
+removeDialog::removeDialog(QWidget *parent, Task* rootTask, int activeRow) :
     Dialog(parent),
     ui(new Ui::removeDialog)
 {
     ui->setupUi(this);
-    ui->label->setText("Are you sure you want to remove " + QString::fromStdString(taskToRemove->getName()) + "?");
+    ui->label->setText("Are you sure you want to remove " + QString::fromStdString(rootTask->getSubtaskAt(activeRow)->getName()) + "?");
 
     row = activeRow;
 }

@@ -89,7 +89,7 @@ Task* Task::getSubtaskAt(int index)
 
 void Task::addSubtask(Task* taskToAdd, int index /* = -1 */)
 {
-    if(index < -1 || index >= taskList.length())
+    if(index < -1)
     {
         qDebug() << "Can't add task at index " << index;
         return;
