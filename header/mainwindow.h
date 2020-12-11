@@ -36,7 +36,7 @@ private slots:
 
     void on_actionAboutQt_triggered();
 
-    void on_actionSave_triggered();
+    void on_actionExport_triggered();
 
     void on_actionAbout_triggered();
 

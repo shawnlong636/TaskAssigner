@@ -99,7 +99,7 @@
      <string>File</string>
     </property>
     <addaction name="separator"/>
-    <addaction name="actionSave"/>
+    <addaction name="actionExport"/>
    </widget>
    <widget class="QMenu" name="menutest">
     <property name="title">
@@ -112,9 +112,9 @@
    <addaction name="menutest"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
-  <action name="actionSave">
+  <action name="actionExport">
    <property name="text">
-    <string>Save</string>
+    <string>Export</string>
    </property>
   </action>
   <action name="actionAboutQt">

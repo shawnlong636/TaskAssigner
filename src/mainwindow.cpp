@@ -161,7 +161,7 @@ void MainWindow::on_actionAboutQt_triggered()
     QMessageBox::aboutQt(this);
 }
 
-void MainWindow::on_actionSave_triggered()
+void MainWindow::on_actionExport_triggered()
 {
     //FIXME Needs further testing and improvements
     QString filename = QFileDialog::getSaveFileName(this,tr("Save File as"),QDir::homePath(),tr("Tab-delimitted (*.txt)")  );
@@ -189,34 +189,3 @@ void MainWindow::on_actionAbout_triggered() // FIXME: ADD Arzhang's last name
 }
 
 
-void MainWindow::on_actionAboutQt_triggered()
-{
-    QMessageBox::aboutQt(this);
-}
-
-void MainWindow::on_actionSave_triggered()
-{
-    //FIXME Needs further testing and improvements
-    QString filename = QFileDialog::getSaveFileName(this,tr("Save File as"),QDir::homePath(),tr("Tab-delimitted (*.txt)")  );
-
-    std::ofstream ofs(filename.toStdString());
-    ofs << "test write";
-
-
-    ofs << "Parent,Name,Description,Date,Status\n";
-
-
-
-    for (int i = 0; i<rootTask->taskListSize(); i++) {
-        ofs << rootTask->getSubtaskAt(i)->toDo();
-    }
-    ofs.close();
-}
-
-void MainWindow::on_actionAbout_triggered() // FIXME: ADD Arzhang's last name
-{
-    QString str = "This program is a final project by Yuval Bar, Shawn Long,"
-                    "and Arzhang for CS 100 at the University of California, Riverside."
-                    "Enjoy!";
-    QMessageBox::about(this,tr("title"),str);
-}
