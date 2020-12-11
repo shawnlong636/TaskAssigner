@@ -85,6 +85,9 @@
              <property name="horizontalScrollBarPolicy">
               <enum>Qt::ScrollBarAlwaysOff</enum>
              </property>
+             <property name="tabChangesFocus">
+              <bool>true</bool>
+             </property>
             </widget>
            </item>
           </layout>
@@ -149,6 +152,9 @@
              <width>0</width>
              <height>127</height>
             </size>
+           </property>
+           <property name="tabChangesFocus">
+            <bool>true</bool>
            </property>
           </widget>
          </item>
