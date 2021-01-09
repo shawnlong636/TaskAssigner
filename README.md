@@ -1,4 +1,5 @@
 # Task Assigner
+This was the final project for CS 100: Software Construction at UC Riverside. Our group of 3 memebers collaborated to design a task management application with a GUI that demonstrates understanding of 3 design patterns.
 
 #### Authors:
 
